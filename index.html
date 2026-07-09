@@ -1,0 +1,1136 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Karthick Design – MS Fabrication Work | Chennai</title>
+<style>
+/* ── TOKENS ── */
+:root {
+  --red:       #C41E2A;
+  --red-hot:   #E8301E;
+  --ember:     #FF5C2A;
+  --forge:     #141416;
+  --forge-mid: #1E1E22;
+  --forge-rim: #2A2A30;
+  --steel:     #6B7A8D;
+  --steel-lt:  #9BAABB;
+  --smoke:     #F2F1F5;
+  --ash:       #E3E1E8;
+  --white:     #FFFFFF;
+
+  --bg:        var(--forge);
+  --bg2:       var(--forge-mid);
+  --surface:   var(--forge-rim);
+  --text:      #EDECF2;
+  --text-sub:  var(--steel-lt);
+  --border:    rgba(255,255,255,0.07);
+  --shadow:    0 4px 32px rgba(0,0,0,0.5);
+
+  --font-disp: 'Arial Black', 'Impact', 'Franklin Gothic Heavy', sans-serif;
+  --font-body: -apple-system, 'Segoe UI', system-ui, sans-serif;
+
+  --r: 0px; /* sharp industrial — no border-radius everywhere */
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --bg:      var(--smoke);
+    --bg2:     var(--ash);
+    --surface: #FFFFFF;
+    --text:    #111114;
+    --text-sub:#4A5568;
+    --border:  rgba(0,0,0,0.09);
+    --shadow:  0 4px 32px rgba(0,0,0,0.12);
+  }
+}
+:root[data-theme="light"] {
+  --bg:      var(--smoke);
+  --bg2:     var(--ash);
+  --surface: #FFFFFF;
+  --text:    #111114;
+  --text-sub:#4A5568;
+  --border:  rgba(0,0,0,0.09);
+  --shadow:  0 4px 32px rgba(0,0,0,0.12);
+}
+:root[data-theme="dark"] {
+  --bg:        var(--forge);
+  --bg2:       var(--forge-mid);
+  --surface:   var(--forge-rim);
+  --text:      #EDECF2;
+  --text-sub:  var(--steel-lt);
+  --border:    rgba(255,255,255,0.07);
+  --shadow:    0 4px 32px rgba(0,0,0,0.5);
+}
+
+/* ── RESET ── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  background:var(--bg);
+  color:var(--text);
+  font-family:var(--font-body);
+  line-height:1.6;
+  overflow-x:hidden;
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+
+/* ── STICKY CTA ── */
+.sticky-call{
+  position:fixed;bottom:24px;right:24px;z-index:999;
+  background:var(--red);
+  color:#fff;
+  font-family:var(--font-body);
+  font-weight:700;font-size:.9rem;
+  letter-spacing:.04em;
+  padding:14px 22px;
+  display:flex;align-items:center;gap:10px;
+  box-shadow:0 8px 32px rgba(196,30,42,0.5);
+  transition:background .2s, transform .15s;
+  clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);
+}
+.sticky-call:hover{background:var(--red-hot);transform:translateY(-2px)}
+.sticky-call svg{width:18px;height:18px;flex-shrink:0}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 clamp(20px,5vw,80px);
+  height:68px;
+  background:rgba(20,20,22,0.92);
+  backdrop-filter:blur(14px);
+  -webkit-backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--border);
+}
+:root[data-theme="light"] nav{background:rgba(242,241,245,0.92)}
+
+.nav-logo{
+  font-family:var(--font-disp);
+  font-size:1.3rem;
+  letter-spacing:.1em;
+  color:var(--white);
+  display:flex;align-items:center;gap:10px;
+}
+:root[data-theme="light"] .nav-logo{color:var(--forge)}
+.nav-logo span{color:var(--red)}
+
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{
+  font-size:.82rem;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;
+  color:var(--text-sub);
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--red)}
+
+.nav-cta{
+  background:var(--red);
+  color:#fff;
+  font-size:.8rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;
+  padding:10px 20px;
+  transition:background .2s;
+  clip-path:polygon(6px 0%,100% 0%,calc(100% - 6px) 100%,0% 100%);
+}
+.nav-cta:hover{background:var(--red-hot)}
+
+.theme-toggle{
+  background:none;border:1px solid var(--border);
+  color:var(--text-sub);
+  width:36px;height:36px;
+  cursor:pointer;font-size:1rem;
+  display:flex;align-items:center;justify-content:center;
+  transition:border-color .2s;
+}
+.theme-toggle:hover{border-color:var(--red)}
+
+/* ── HERO ── */
+.hero{
+  position:relative;
+  min-height:100svh;
+  display:flex;align-items:center;
+  padding:80px clamp(20px,5vw,80px) 60px;
+  overflow:hidden;
+}
+
+/* CSS perforated steel mesh */
+.hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background-image:
+    radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+  background-size:28px 28px;
+  z-index:0;
+}
+
+/* diagonal red slash accent */
+.hero::after{
+  content:'';
+  position:absolute;
+  top:-10%;right:-5%;
+  width:55%;height:130%;
+  background:linear-gradient(135deg, transparent 30%, rgba(196,30,42,0.12) 30%, rgba(196,30,42,0.18) 50%, transparent 50%);
+  transform:skewX(-8deg);
+  z-index:0;
+  pointer-events:none;
+}
+
+.hero-inner{
+  position:relative;z-index:2;
+  max-width:1200px;width:100%;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:60px;align-items:center;
+}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:10px;
+  background:rgba(196,30,42,0.15);
+  border:1px solid rgba(196,30,42,0.4);
+  color:var(--red-hot);
+  font-size:.72rem;font-weight:700;
+  letter-spacing:.16em;text-transform:uppercase;
+  padding:7px 14px;
+  margin-bottom:24px;
+}
+.hero-badge::before{content:'';width:6px;height:6px;background:var(--red);animation:pulse 1.8s ease infinite}
+
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+
+.hero h1{
+  font-family:var(--font-disp);
+  font-size:clamp(2.6rem,5vw,4.4rem);
+  line-height:1.02;
+  letter-spacing:.02em;
+  text-transform:uppercase;
+  text-wrap:balance;
+  color:var(--white);
+  margin-bottom:8px;
+}
+:root[data-theme="light"] .hero h1{color:var(--forge)}
+
+.hero h1 .accent{
+  color:var(--red);
+  display:block;
+}
+
+.hero-sub{
+  font-size:clamp(.9rem,1.5vw,1.05rem);
+  color:var(--text-sub);
+  max-width:480px;
+  margin:20px 0 36px;
+  line-height:1.7;
+}
+
+.hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:48px}
+
+.btn-primary{
+  background:var(--red);color:#fff;
+  font-weight:700;font-size:.9rem;
+  letter-spacing:.06em;text-transform:uppercase;
+  padding:16px 32px;
+  display:inline-flex;align-items:center;gap:10px;
+  transition:background .2s,transform .15s,box-shadow .2s;
+  clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);
+  box-shadow:0 0 0 0 rgba(196,30,42,0.5);
+}
+.btn-primary:hover{background:var(--red-hot);transform:translateY(-2px);box-shadow:0 8px 32px rgba(196,30,42,0.45)}
+
+.btn-secondary{
+  background:transparent;
+  border:1.5px solid var(--border);
+  color:var(--text);
+  font-weight:600;font-size:.9rem;
+  letter-spacing:.06em;text-transform:uppercase;
+  padding:16px 28px;
+  display:inline-flex;align-items:center;gap:10px;
+  transition:border-color .2s,color .2s;
+  clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);
+}
+.btn-secondary:hover{border-color:var(--steel);color:var(--text)}
+
+.hero-stats{
+  display:flex;gap:32px;flex-wrap:wrap;
+}
+.stat{border-left:3px solid var(--red);padding-left:16px}
+.stat-n{
+  font-family:var(--font-disp);
+  font-size:2rem;
+  color:var(--white);
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+:root[data-theme="light"] .stat-n{color:var(--forge)}
+.stat-l{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-sub);margin-top:4px}
+
+/* hero right – fabrication diagram */
+.hero-visual{
+  position:relative;
+  display:flex;align-items:center;justify-content:center;
+}
+.steel-frame{
+  width:100%;max-width:480px;
+  aspect-ratio:4/3;
+  position:relative;
+}
+
+/* ── TRUST BAR ── */
+.trust-bar{
+  background:var(--red);
+  padding:18px clamp(20px,5vw,80px);
+  display:flex;align-items:center;justify-content:center;
+  gap:48px;flex-wrap:wrap;
+  overflow-x:auto;
+}
+.trust-item{
+  display:flex;align-items:center;gap:12px;
+  color:#fff;
+  font-size:.78rem;font-weight:700;
+  letter-spacing:.12em;text-transform:uppercase;
+  white-space:nowrap;
+}
+.trust-item svg{width:20px;height:20px;opacity:.85;flex-shrink:0}
+.trust-sep{width:1px;height:24px;background:rgba(255,255,255,0.25);flex-shrink:0}
+
+/* ── SECTION SHARED ── */
+section{padding:100px clamp(20px,5vw,80px)}
+.section-label{
+  font-size:.72rem;font-weight:700;
+  letter-spacing:.2em;text-transform:uppercase;
+  color:var(--red);
+  margin-bottom:12px;
+  display:flex;align-items:center;gap:10px;
+}
+.section-label::before{content:'';flex-shrink:0;width:24px;height:2px;background:var(--red)}
+
+h2.section-title{
+  font-family:var(--font-disp);
+  font-size:clamp(1.8rem,3.5vw,2.8rem);
+  letter-spacing:.03em;
+  text-transform:uppercase;
+  text-wrap:balance;
+  line-height:1.08;
+  color:var(--text);
+}
+h2.section-title span{color:var(--red)}
+
+/* ── SERVICES ── */
+.services{background:var(--bg2)}
+
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:2px;
+  margin-top:56px;
+  background:var(--border);
+}
+
+.service-card{
+  background:var(--surface);
+  padding:40px 32px;
+  position:relative;
+  overflow:hidden;
+  transition:background .2s;
+  cursor:default;
+}
+.service-card::after{
+  content:'';
+  position:absolute;bottom:0;left:0;right:0;
+  height:3px;
+  background:var(--red);
+  transform:scaleX(0);
+  transform-origin:left;
+  transition:transform .3s ease;
+}
+.service-card:hover::after{transform:scaleX(1)}
+.service-card:hover{background:var(--bg);}
+:root[data-theme="light"] .service-card:hover{background:var(--ash)}
+
+.service-icon{
+  width:52px;height:52px;
+  margin-bottom:24px;
+  color:var(--red);
+}
+.service-card h3{
+  font-family:var(--font-disp);
+  font-size:1.1rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--text);
+  margin-bottom:12px;
+}
+.service-card p{font-size:.88rem;color:var(--text-sub);line-height:1.7}
+
+/* ── WHY US ── */
+.why{
+  background:var(--forge);
+  position:relative;overflow:hidden;
+}
+:root[data-theme="light"] .why{background:var(--smoke)}
+
+.why::before{
+  content:'';
+  position:absolute;top:0;right:0;
+  width:50%;height:100%;
+  background:
+    repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 20px,
+      rgba(196,30,42,0.04) 20px,
+      rgba(196,30,42,0.04) 21px
+    );
+  pointer-events:none;
+}
+
+.why-inner{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:center;
+  position:relative;z-index:1;
+}
+
+.why-features{margin-top:48px;display:flex;flex-direction:column;gap:0}
+.why-feat{
+  display:grid;grid-template-columns:56px 1fr;
+  gap:20px;align-items:start;
+  padding:24px 0;
+  border-bottom:1px solid var(--border);
+}
+.why-feat:first-child{border-top:1px solid var(--border)}
+.feat-num{
+  font-family:var(--font-disp);
+  font-size:2rem;color:var(--red);
+  line-height:1;
+  opacity:.5;
+  font-variant-numeric:tabular-nums;
+}
+.feat-title{
+  font-family:var(--font-disp);
+  font-size:1rem;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  color:var(--text);
+  margin-bottom:6px;
+}
+.feat-desc{font-size:.85rem;color:var(--text-sub);line-height:1.65}
+
+.why-visual{
+  display:flex;flex-direction:column;gap:16px;
+}
+.why-cert{
+  background:var(--surface);
+  border:1px solid var(--border);
+  padding:28px;
+  display:flex;align-items:center;gap:20px;
+}
+.cert-icon{
+  width:56px;height:56px;
+  background:var(--red);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  color:#fff;
+}
+.cert-icon svg{width:28px;height:28px}
+.cert-text strong{
+  display:block;
+  font-family:var(--font-disp);
+  font-size:1rem;
+  letter-spacing:.06em;
+  text-transform:uppercase;
+  color:var(--text);
+  margin-bottom:4px;
+}
+.cert-text span{font-size:.82rem;color:var(--text-sub)}
+
+.tagline-block{
+  background:var(--red);
+  padding:28px;
+  text-align:center;
+}
+.tagline-block p{
+  font-family:var(--font-disp);
+  font-size:1rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:#fff;
+}
+
+/* ── PROCESS ── */
+.process{background:var(--bg2)}
+
+.process-steps{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:0;
+  margin-top:56px;
+  position:relative;
+}
+.process-steps::before{
+  content:'';
+  position:absolute;
+  top:28px;left:0;right:0;
+  height:1px;
+  background:var(--border);
+  z-index:0;
+}
+
+.step{
+  padding:0 24px 40px;
+  position:relative;
+  z-index:1;
+}
+.step-dot{
+  width:56px;height:56px;
+  background:var(--surface);
+  border:2px solid var(--border);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:24px;
+  font-family:var(--font-disp);
+  font-size:1.2rem;
+  color:var(--red);
+  transition:background .2s, border-color .2s;
+}
+.step:hover .step-dot{background:var(--red);border-color:var(--red);color:#fff}
+
+.step h3{
+  font-family:var(--font-disp);
+  font-size:.9rem;
+  text-transform:uppercase;
+  letter-spacing:.1em;
+  color:var(--text);
+  margin-bottom:8px;
+}
+.step p{font-size:.83rem;color:var(--text-sub);line-height:1.65}
+
+/* ── CONTACT ── */
+.contact{background:var(--forge)}
+:root[data-theme="light"] .contact{background:var(--smoke)}
+
+.contact-inner{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:80px;align-items:start;
+}
+
+.contact-info{display:flex;flex-direction:column;gap:0}
+.contact-item{
+  display:flex;gap:20px;align-items:flex-start;
+  padding:24px 0;
+  border-bottom:1px solid var(--border);
+}
+.contact-item:first-child{border-top:1px solid var(--border)}
+.contact-ico{
+  width:44px;height:44px;
+  background:rgba(196,30,42,0.12);
+  border:1px solid rgba(196,30,42,0.3);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+  color:var(--red);
+}
+.contact-ico svg{width:20px;height:20px}
+.contact-lbl{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);margin-bottom:4px}
+.contact-val{font-size:.95rem;font-weight:600;color:var(--text)}
+.contact-val a{color:var(--text);transition:color .2s}
+.contact-val a:hover{color:var(--red)}
+
+/* FORM */
+.contact-form{background:var(--surface);padding:40px;border:1px solid var(--border)}
+
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.form-group{margin-bottom:16px;display:flex;flex-direction:column;gap:6px}
+.form-group label{
+  font-size:.72rem;font-weight:700;
+  letter-spacing:.14em;text-transform:uppercase;
+  color:var(--text-sub);
+}
+.form-group input,
+.form-group select,
+.form-group textarea{
+  background:var(--bg);
+  border:1.5px solid var(--border);
+  color:var(--text);
+  font-family:var(--font-body);
+  font-size:.9rem;
+  padding:12px 14px;
+  width:100%;
+  outline:none;
+  transition:border-color .2s;
+  appearance:none;
+}
+.form-group input::placeholder,
+.form-group textarea::placeholder{color:var(--steel)}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{border-color:var(--red)}
+.form-group textarea{resize:vertical;min-height:110px}
+.form-group select option{background:var(--forge)}
+
+.btn-submit{
+  width:100%;
+  background:var(--red);
+  color:#fff;
+  font-family:var(--font-body);
+  font-weight:700;font-size:.9rem;
+  letter-spacing:.08em;text-transform:uppercase;
+  padding:16px;
+  border:none;cursor:pointer;
+  margin-top:8px;
+  transition:background .2s,transform .15s;
+  clip-path:polygon(10px 0%,100% 0%,calc(100% - 10px) 100%,0% 100%);
+}
+.btn-submit:hover{background:var(--red-hot);transform:translateY(-1px)}
+
+.form-note{font-size:.75rem;color:var(--steel);margin-top:10px;text-align:center}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--forge-mid);
+  border-top:1px solid var(--border);
+  padding:32px clamp(20px,5vw,80px);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:16px;
+}
+:root[data-theme="light"] footer{background:var(--ash)}
+
+.footer-logo{
+  font-family:var(--font-disp);
+  font-size:1rem;
+  letter-spacing:.12em;
+  color:var(--text);
+}
+.footer-logo span{color:var(--red)}
+.footer-copy{font-size:.75rem;color:var(--steel)}
+
+/* ── CANVAS SVG STEEL FRAME ── */
+canvas.steel-canvas{
+  width:100%;height:auto;
+  display:block;
+}
+
+/* ── SCROLL REVEAL ── */
+.reveal{
+  opacity:0;
+  transform:translateY(28px);
+  transition:opacity .6s ease, transform .6s ease;
+}
+.reveal.visible{opacity:1;transform:none}
+
+/* ── RESPONSIVE ── */
+@media (max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-visual{display:none}
+  .why-inner{grid-template-columns:1fr}
+  .contact-inner{grid-template-columns:1fr}
+  .nav-links{display:none}
+  .form-row{grid-template-columns:1fr}
+}
+@media (max-width:600px){
+  .hero h1{font-size:2.4rem}
+  .hero-actions{flex-direction:column}
+  .btn-primary,.btn-secondary{text-align:center;justify-content:center}
+  .trust-sep{display:none}
+  section{padding:72px clamp(20px,5vw,40px)}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none}
+  *{animation-duration:.01ms!important;transition-duration:.01ms!important}
+}
+</style>
+</head>
+<body>
+
+<!-- STICKY CALL -->
+<a href="tel:+918608720195" class="sticky-call" aria-label="Call Now">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+  Call Now: 8608720195
+</a>
+
+<!-- NAV -->
+<nav role="navigation">
+  <div class="nav-logo">
+    <span>KD</span> KARTHICK DESIGN
+  </div>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div style="display:flex;gap:12px;align-items:center">
+    <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">☀</button>
+    <a href="#contact" class="nav-cta">Get Quote</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" role="banner">
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge reveal">
+        <span></span>Chennai's #1 MS Fabrication Specialist
+      </div>
+      <h1 class="reveal">
+        Built in
+        <span class="accent">Steel.</span>
+        Built to Last.
+      </h1>
+      <p class="hero-sub reveal">
+        Precision metal fabrication for gates, railings, industrial sheds, and custom structures.
+        Serving Chennai and Tamil Nadu with craftsmanship you can trust.
+      </p>
+      <div class="hero-actions reveal">
+        <a href="tel:+918608720195" class="btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+          Call 8608720195
+        </a>
+        <a href="#contact" class="btn-secondary">Get Free Quote →</a>
+      </div>
+      <div class="hero-stats reveal">
+        <div class="stat">
+          <div class="stat-n">15+</div>
+          <div class="stat-l">Years Experience</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">500+</div>
+          <div class="stat-l">Projects Done</div>
+        </div>
+        <div class="stat">
+          <div class="stat-n">100%</div>
+          <div class="stat-l">Client Satisfaction</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-visual" aria-hidden="true">
+      <canvas id="steelCanvas" class="steel-canvas" width="480" height="360"></canvas>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar" role="complementary" aria-label="Trust signals">
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+    BNI Proud Member
+  </div>
+  <div class="trust-sep"></div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+    Strong · Precise · Reliable
+  </div>
+  <div class="trust-sep"></div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+    Fast Turnaround
+  </div>
+  <div class="trust-sep"></div>
+  <div class="trust-item">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+    In-House Skilled Team
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section id="services" class="services">
+  <div class="section-label reveal">What We Build</div>
+  <h2 class="section-title reveal">Our <span>Fabrication</span> Services</h2>
+  <p class="reveal" style="margin-top:16px;color:var(--text-sub);max-width:560px;font-size:.95rem">From decorative gates to industrial sheds — every weld, every joint, crafted to exact specification.</p>
+
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M12 2l-1.5 2.5-2.5.5 1.7 2-.4 2.5L12 8l2.7 1.5-.4-2.5 1.7-2-2.5-.5z"/><path d="M5 12l-2 1 2 1v3l3-1.5L11 18v-3l2-1-2-1v-3l-3 1.5z"/><line x1="12" y1="8" x2="12" y2="22"/><line x1="4" y1="14" x2="20" y2="14"/>
+      </svg>
+      <h3>Welding</h3>
+      <p>MIG, TIG and arc welding for structural and decorative metalwork. Precision joints built for strength and longevity under load.</p>
+    </div>
+    <div class="service-card reveal">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="3" y="3" width="18" height="18" rx="0"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/>
+      </svg>
+      <h3>Gates &amp; Railings</h3>
+      <p>Custom-designed MS gates, compound railings, staircase handrails, and balcony guards. Functional beauty in every form.</p>
+    </div>
+    <div class="service-card reveal">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="3 9 12 3 21 9"/><path d="M3 9v12h18V9"/><line x1="9" y1="21" x2="9" y2="13"/><line x1="15" y1="21" x2="15" y2="13"/>
+      </svg>
+      <h3>Sheds &amp; Structures</h3>
+      <p>Industrial-grade pre-engineered sheds, factory roofing, parking canopies, and MS structural frameworks for any scale.</p>
+    </div>
+    <div class="service-card reveal">
+      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+      </svg>
+      <h3>Custom Fabrication</h3>
+      <p>Bespoke metal solutions — machinery guards, mezzanine floors, storage racks, trolleys, and any bespoke structural requirement.</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why" class="why">
+  <div class="why-inner">
+    <div>
+      <div class="section-label reveal">Why Karthick Design</div>
+      <h2 class="section-title reveal">Precision Built<br><span>Into Every Joint</span></h2>
+
+      <div class="why-features">
+        <div class="why-feat reveal">
+          <div class="feat-num">01</div>
+          <div>
+            <div class="feat-title">Strong by Design</div>
+            <p class="feat-desc">We use certified MS sections and structural-grade steel sourced from trusted suppliers. Every fabrication is engineered to withstand real-world loads.</p>
+          </div>
+        </div>
+        <div class="why-feat reveal">
+          <div class="feat-num">02</div>
+          <div>
+            <div class="feat-title">Precise Execution</div>
+            <p class="feat-desc">Our skilled in-house team works to tight tolerances. Shop drawings, measurements, and quality checks happen at every stage — not just at delivery.</p>
+          </div>
+        </div>
+        <div class="why-feat reveal">
+          <div class="feat-num">03</div>
+          <div>
+            <div class="feat-title">Reliable Timelines</div>
+            <p class="feat-desc">We respect your project schedule. Clear milestone commitments, transparent communication, and on-site installation available across Chennai and Tamil Nadu.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-visual">
+      <div class="why-cert reveal">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+        </div>
+        <div class="cert-text">
+          <strong>BNI Proud Member</strong>
+          <span>Growing Forward Together — Chennai Chapter</span>
+        </div>
+      </div>
+
+      <div class="why-cert reveal">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+        </div>
+        <div class="cert-text">
+          <strong>15+ Years of Expertise</strong>
+          <span>Hundreds of structures fabricated across Chennai</span>
+        </div>
+      </div>
+
+      <div class="why-cert reveal">
+        <div class="cert-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+        </div>
+        <div class="cert-text">
+          <strong>End-to-End Service</strong>
+          <span>Design → Fabrication → Delivery → Installation</span>
+        </div>
+      </div>
+
+      <div class="tagline-block reveal">
+        <p>STRONG &nbsp;•&nbsp; PRECISE &nbsp;•&nbsp; RELIABLE</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process" class="process">
+  <div class="section-label reveal">How It Works</div>
+  <h2 class="section-title reveal">From Enquiry to <span>Installation</span></h2>
+
+  <div class="process-steps">
+    <div class="step reveal">
+      <div class="step-dot">01</div>
+      <h3>Free Consultation</h3>
+      <p>Call or WhatsApp us. We discuss your requirement, site conditions, and budget — no obligation.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-dot">02</div>
+      <h3>Site Visit &amp; Measurement</h3>
+      <p>Our team visits your site, takes precise measurements, and prepares accurate drawings.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-dot">03</div>
+      <h3>Quotation &amp; Approval</h3>
+      <p>We provide a detailed, transparent quote. On your approval, we begin fabrication immediately.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-dot">04</div>
+      <h3>Fabrication</h3>
+      <p>Your structure is fabricated at our workshop using quality MS material and skilled craftsmanship.</p>
+    </div>
+    <div class="step reveal">
+      <div class="step-dot">05</div>
+      <h3>Delivery &amp; Install</h3>
+      <p>We deliver and install on-site, ensuring a clean finish with all surface treatments applied.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="section-label reveal">Reach Us</div>
+  <h2 class="section-title reveal" style="margin-bottom:56px">Get a <span>Free Quote</span> Today</h2>
+
+  <div class="contact-inner">
+    <div>
+      <div class="contact-info">
+        <div class="contact-item reveal">
+          <div class="contact-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 012 1.18 2 2 0 014 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+          </div>
+          <div>
+            <div class="contact-lbl">Phone / WhatsApp</div>
+            <div class="contact-val"><a href="tel:+918608720195">+91 86087 20195</a></div>
+          </div>
+        </div>
+        <div class="contact-item reveal">
+          <div class="contact-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <div>
+            <div class="contact-lbl">Email</div>
+            <div class="contact-val"><a href="mailto:karthickdesign28@gmail.com">karthickdesign28@gmail.com</a></div>
+          </div>
+        </div>
+        <div class="contact-item reveal">
+          <div class="contact-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div>
+            <div class="contact-lbl">Workshop Address</div>
+            <div class="contact-val">33/15, C.P. Mudali Street, Pudupet,<br>Chennai, Tamil Nadu – 600 002</div>
+          </div>
+        </div>
+        <div class="contact-item reveal">
+          <div class="contact-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="0"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="17"/><line x1="9" y1="14.5" x2="15" y2="14.5"/></svg>
+          </div>
+          <div>
+            <div class="contact-lbl">Contact Person</div>
+            <div class="contact-val">S. Nagarajan</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="contact-form reveal">
+      <form id="quoteForm" onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name *</label>
+            <input type="text" id="name" name="name" placeholder="Ravi Kumar" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number *</label>
+            <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="service">Service Required</label>
+          <select id="service" name="service">
+            <option value="">Select a service…</option>
+            <option>Welding</option>
+            <option>Gates &amp; Railings</option>
+            <option>Sheds &amp; Structures</option>
+            <option>Custom Fabrication</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="location">Project Location</label>
+          <input type="text" id="location" name="location" placeholder="Chennai, T. Nagar…">
+        </div>
+        <div class="form-group">
+          <label for="message">Project Details</label>
+          <textarea id="message" name="message" placeholder="Tell us about your requirement — dimensions, quantity, timeline…"></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Enquiry →</button>
+        <p class="form-note">We'll respond within 2 hours during business hours.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo"><span>KD</span> KARTHICK DESIGN</div>
+  <div class="footer-copy">© 2025 Karthick Design – MS Fabrication Work, Chennai. All rights reserved.</div>
+  <div style="display:flex;gap:16px">
+    <a href="tel:+918608720195" style="font-size:.8rem;color:var(--red);font-weight:700;letter-spacing:.06em">8608720195</a>
+  </div>
+</footer>
+
+<script>
+/* Theme toggle */
+const btn = document.getElementById('themeBtn');
+const root = document.documentElement;
+function getTheme(){return root.dataset.theme || (matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}
+function setTheme(t){root.dataset.theme=t;btn.textContent=t==='dark'?'☀':'☾';localStorage.setItem('kd-theme',t)}
+const saved = localStorage.getItem('kd-theme');
+if(saved) setTheme(saved); else setTheme(getTheme());
+btn.addEventListener('click',()=>setTheme(getTheme()==='dark'?'light':'dark'));
+
+/* Scroll reveal */
+const revealEls = document.querySelectorAll('.reveal');
+const io = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');io.unobserve(e.target)}});
+},{threshold:0.12,rootMargin:'0px 0px -40px 0px'});
+revealEls.forEach(el=>io.observe(el));
+
+/* Form submit */
+function handleSubmit(e){
+  e.preventDefault();
+  const f=e.target;
+  const name=f.name.value;
+  const phone=f.phone.value;
+  const service=f.service.value;
+  const msg=f.message.value;
+  const body=encodeURIComponent(`New Quote Request\n\nName: ${name}\nPhone: ${phone}\nService: ${service||'Not specified'}\nLocation: ${f.location.value}\nDetails: ${msg}`);
+  window.location.href=`mailto:karthickdesign28@gmail.com?subject=Quote Request – ${encodeURIComponent(service||'MS Fabrication')}&body=${body}`;
+}
+
+/* Steel frame canvas drawing */
+(function(){
+  const canvas = document.getElementById('steelCanvas');
+  if(!canvas) return;
+  const ctx = canvas.getContext('2d');
+  const W=480, H=360;
+
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+
+    const isDark = document.documentElement.dataset.theme==='dark' ||
+      (!document.documentElement.dataset.theme && matchMedia('(prefers-color-scheme:dark)').matches);
+
+    const col = isDark ? {
+      beam:'#3A3A42', beamHi:'#5A5A66', red:'#C41E2A', redHi:'#E8301E',
+      spark:'#FF8040', grid:'rgba(255,255,255,0.04)'
+    } : {
+      beam:'#B0B8C4', beamHi:'#7A8898', red:'#C41E2A', redHi:'#E8301E',
+      spark:'#FF5500', grid:'rgba(0,0,0,0.05)'
+    };
+
+    // background mesh
+    ctx.strokeStyle = col.grid;
+    ctx.lineWidth = 1;
+    for(let x=0;x<W;x+=32){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}
+    for(let y=0;y<H;y+=32){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}
+
+    // I-beam cross-section helper
+    function ibeam(x,y,w,h){
+      const fw=w, fh=h*0.12, tw=w*0.18;
+      ctx.fillRect(x,y,fw,fh); // top flange
+      ctx.fillRect(x,y+h-fh,fw,fh); // bot flange
+      ctx.fillRect(x+(fw-tw)/2, y+fh, tw, h-fh*2); // web
+    }
+
+    // FRAME STRUCTURE – a simplified shed/structure diagram
+    // columns
+    ctx.fillStyle = col.beam;
+    ibeam(60,60,20,260); // left column
+    ibeam(400,60,20,260); // right column
+
+    // horizontal beam top
+    ctx.fillStyle = col.beamHi;
+    ibeam(60,60,360,16);
+
+    // roof pitch
+    ctx.strokeStyle = col.red;
+    ctx.lineWidth = 6;
+    ctx.beginPath();
+    ctx.moveTo(60,60);ctx.lineTo(240,10);ctx.lineTo(420,60);
+    ctx.stroke();
+
+    // rafter struts
+    ctx.strokeStyle = col.beam;
+    ctx.lineWidth = 3;
+    [[100,60,150,35],[180,60,210,20],[300,60,270,20],[380,60,330,35]].forEach(([x1,y1,x2,y2])=>{
+      ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();
+    });
+
+    // mezzanine level
+    ctx.fillStyle = col.beam;
+    ibeam(60,200,360,12);
+
+    // mid columns
+    ctx.fillStyle = col.beam;
+    ibeam(160,200,16,120);
+    ibeam(305,200,16,120);
+
+    // floor bracing X
+    ctx.strokeStyle = col.beamHi;
+    ctx.lineWidth = 2;
+    ctx.setLineDash([6,4]);
+    ctx.beginPath();ctx.moveTo(60,200);ctx.lineTo(160,320);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(160,200);ctx.lineTo(60,320);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(305,200);ctx.lineTo(420,320);ctx.stroke();
+    ctx.beginPath();ctx.moveTo(420,200);ctx.lineTo(305,320);ctx.stroke();
+    ctx.setLineDash([]);
+
+    // base plate
+    ctx.fillStyle = col.red;
+    ctx.fillRect(44,318,40,6);
+    ctx.fillRect(230,8,20,6);
+    ctx.fillRect(396,318,40,6);
+    ctx.fillRect(147,316,30,8);
+    ctx.fillRect(297,316,30,8);
+
+    // weld spark animation target
+    drawSpark(ctx, 240, 10, col.spark, sparks[0]);
+    drawSpark(ctx, 60, 60, col.spark, sparks[1]);
+    drawSpark(ctx, 420, 60, col.spark, sparks[2]);
+
+    // dimension lines
+    ctx.strokeStyle = isDark ? 'rgba(255,255,255,0.2)':'rgba(0,0,0,0.15)';
+    ctx.lineWidth=1;
+    ctx.setLineDash([4,4]);
+    ctx.beginPath();ctx.moveTo(24,60);ctx.lineTo(24,320);ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle = col.red;
+    ctx.font='bold 10px monospace';
+    ctx.textAlign='center';
+    ctx.fillText('260mm',24,195);
+  }
+
+  const sparks=[{t:0},{t:0.3},{t:0.6}];
+
+  function drawSpark(ctx,x,y,col,s){
+    const size = 8 + Math.sin(Date.now()/300 + s.t*Math.PI*2)*6;
+    const alpha = 0.6+Math.sin(Date.now()/200+s.t*6)*0.4;
+    ctx.save();
+    ctx.globalAlpha=alpha;
+    ctx.strokeStyle=col;
+    ctx.lineWidth=1.5;
+    const r=size;
+    for(let i=0;i<6;i++){
+      const a=i*Math.PI/3+Date.now()/800;
+      const len=r*(0.4+Math.random()*0.6);
+      ctx.beginPath();
+      ctx.moveTo(x,y);
+      ctx.lineTo(x+Math.cos(a)*len, y+Math.sin(a)*len);
+      ctx.stroke();
+    }
+    ctx.globalAlpha=alpha*0.8;
+    ctx.fillStyle=col;
+    ctx.beginPath();ctx.arc(x,y,2.5,0,Math.PI*2);ctx.fill();
+    ctx.restore();
+  }
+
+  function loop(){
+    draw();
+    requestAnimationFrame(loop);
+  }
+  loop();
+
+  // redraw on theme change
+  new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+})();
+</script>
+</body>
+</html>
