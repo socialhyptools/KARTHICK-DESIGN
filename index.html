@@ -107,14 +107,14 @@ nav{
 :root[data-theme="light"] nav{background:rgba(242,241,245,0.92)}
 
 .nav-logo{
-  font-family:var(--font-disp);
-  font-size:1.3rem;
-  letter-spacing:.1em;
-  color:var(--white);
   display:flex;align-items:center;gap:10px;
 }
-:root[data-theme="light"] .nav-logo{color:var(--forge)}
-.nav-logo span{color:var(--red)}
+.nav-logo img{
+  height:44px;
+  width:auto;
+  object-fit:contain;
+  display:block;
+}
 
 .nav-links{display:flex;gap:32px;list-style:none}
 .nav-links a{
@@ -648,9 +648,9 @@ canvas.steel-canvas{
 
 <!-- NAV -->
 <nav role="navigation">
-  <div class="nav-logo">
-    <span>KD</span> KARTHICK DESIGN
-  </div>
+  <a href="#" class="nav-logo">
+    <img src="Logo.png" alt="Karthick Design – MS Fabrication Work">
+  </a>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
     <li><a href="#why">Why Us</a></li>
@@ -959,7 +959,7 @@ canvas.steel-canvas{
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo"><span>KD</span> KARTHICK DESIGN</div>
+  <div class="footer-logo"><img src="Logo.png" alt="Karthick Design" style="height:36px;width:auto;object-fit:contain;display:block"></div>
   <div class="footer-copy">© 2025 Karthick Design – MS Fabrication Work, Chennai. All rights reserved.</div>
   <div style="display:flex;gap:16px">
     <a href="tel:+918608720195" style="font-size:.8rem;color:var(--red);font-weight:700;letter-spacing:.06em">8608720195</a>
