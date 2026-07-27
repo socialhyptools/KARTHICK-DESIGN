@@ -1,66 +1,30 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Karthick Design – MS Fabrication Work | Chennai</title>
 <style>
-/* ── TOKENS ── */
+/* ── TOKENS (light mode only) ── */
 :root {
   --red:       #C41E2A;
   --red-hot:   #E8301E;
   --ember:     #FF5C2A;
-  --forge:     #141416;
-  --forge-mid: #1E1E22;
-  --forge-rim: #2A2A30;
   --steel:     #6B7A8D;
-  --steel-lt:  #9BAABB;
   --smoke:     #F2F1F5;
   --ash:       #E3E1E8;
   --white:     #FFFFFF;
 
-  --bg:        var(--forge);
-  --bg2:       var(--forge-mid);
-  --surface:   var(--forge-rim);
-  --text:      #EDECF2;
-  --text-sub:  var(--steel-lt);
-  --border:    rgba(255,255,255,0.07);
-  --shadow:    0 4px 32px rgba(0,0,0,0.5);
+  --bg:        #F2F1F5;
+  --bg2:       #E3E1E8;
+  --surface:   #FFFFFF;
+  --text:      #111114;
+  --text-sub:  #4A5568;
+  --border:    rgba(0,0,0,0.09);
+  --shadow:    0 4px 32px rgba(0,0,0,0.12);
 
   --font-disp: 'Arial Black', 'Impact', 'Franklin Gothic Heavy', sans-serif;
   --font-body: -apple-system, 'Segoe UI', system-ui, sans-serif;
-
-  --r: 0px; /* sharp industrial — no border-radius everywhere */
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg:      var(--smoke);
-    --bg2:     var(--ash);
-    --surface: #FFFFFF;
-    --text:    #111114;
-    --text-sub:#4A5568;
-    --border:  rgba(0,0,0,0.09);
-    --shadow:  0 4px 32px rgba(0,0,0,0.12);
-  }
-}
-:root[data-theme="light"] {
-  --bg:      var(--smoke);
-  --bg2:     var(--ash);
-  --surface: #FFFFFF;
-  --text:    #111114;
-  --text-sub:#4A5568;
-  --border:  rgba(0,0,0,0.09);
-  --shadow:  0 4px 32px rgba(0,0,0,0.12);
-}
-:root[data-theme="dark"] {
-  --bg:        var(--forge);
-  --bg2:       var(--forge-mid);
-  --surface:   var(--forge-rim);
-  --text:      #EDECF2;
-  --text-sub:  var(--steel-lt);
-  --border:    rgba(255,255,255,0.07);
-  --shadow:    0 4px 32px rgba(0,0,0,0.5);
 }
 
 /* ── RESET ── */
@@ -98,38 +62,22 @@ nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;align-items:center;justify-content:space-between;
   padding:0 clamp(20px,5vw,80px);
-  height:68px;
-  background:rgba(20,20,22,0.92);
+  height:88px;
+  background:rgba(242,241,245,0.95);
   backdrop-filter:blur(14px);
   -webkit-backdrop-filter:blur(14px);
-  border-bottom:1px solid var(--border);
+  border-bottom:2px solid rgba(196,30,42,0.15);
 }
-:root[data-theme="light"] nav{background:rgba(242,241,245,0.92)}
 
 .nav-logo{
-  display:flex;align-items:center;gap:10px;
+  display:flex;align-items:center;
 }
 .nav-logo img{
-  height:60px;
+  height:80px;
   width:auto;
   object-fit:contain;
   display:block;
   mix-blend-mode:multiply;
-}
-/* Dark theme — multiply would kill colors; show on a white circle instead */
-:root[data-theme="dark"] .nav-logo img{
-  mix-blend-mode:normal;
-  background:#fff;
-  border-radius:50%;
-  padding:3px;
-}
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]) .nav-logo img{
-    mix-blend-mode:normal;
-    background:#fff;
-    border-radius:50%;
-    padding:3px;
-  }
 }
 
 .nav-links{display:flex;gap:32px;list-style:none}
@@ -152,22 +100,13 @@ nav{
 }
 .nav-cta:hover{background:var(--red-hot)}
 
-.theme-toggle{
-  background:none;border:1px solid var(--border);
-  color:var(--text-sub);
-  width:36px;height:36px;
-  cursor:pointer;font-size:1rem;
-  display:flex;align-items:center;justify-content:center;
-  transition:border-color .2s;
-}
-.theme-toggle:hover{border-color:var(--red)}
 
 /* ── HERO ── */
 .hero{
   position:relative;
   min-height:100svh;
   display:flex;align-items:center;
-  padding:80px clamp(20px,5vw,80px) 60px;
+  padding:108px clamp(20px,5vw,80px) 60px;
   overflow:hidden;
 }
 
@@ -176,7 +115,7 @@ nav{
   content:'';
   position:absolute;inset:0;
   background-image:
-    radial-gradient(circle, rgba(255,255,255,0.06) 1px, transparent 1px);
+    radial-gradient(circle, rgba(0,0,0,0.07) 1px, transparent 1px);
   background-size:28px 28px;
   z-index:0;
 }
@@ -380,10 +319,9 @@ h2.section-title span{color:var(--red)}
 
 /* ── WHY US ── */
 .why{
-  background:var(--forge);
+  background:var(--smoke);
   position:relative;overflow:hidden;
 }
-:root[data-theme="light"] .why{background:var(--smoke)}
 
 .why::before{
   content:'';
@@ -520,8 +458,7 @@ h2.section-title span{color:var(--red)}
 .step p{font-size:.83rem;color:var(--text-sub);line-height:1.65}
 
 /* ── CONTACT ── */
-.contact{background:var(--forge)}
-:root[data-theme="light"] .contact{background:var(--smoke)}
+.contact{background:var(--smoke)}
 
 .contact-inner{
   display:grid;grid-template-columns:1fr 1fr;
@@ -600,13 +537,12 @@ h2.section-title span{color:var(--red)}
 
 /* ── FOOTER ── */
 footer{
-  background:var(--forge-mid);
+  background:var(--ash);
   border-top:1px solid var(--border);
   padding:32px clamp(20px,5vw,80px);
   display:flex;align-items:center;justify-content:space-between;
   flex-wrap:wrap;gap:16px;
 }
-:root[data-theme="light"] footer{background:var(--ash)}
 
 .footer-logo{
   font-family:var(--font-disp);
@@ -673,10 +609,7 @@ canvas.steel-canvas{
     <li><a href="#process">Process</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
-  <div style="display:flex;gap:12px;align-items:center">
-    <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">☀</button>
-    <a href="#contact" class="nav-cta">Get Quote</a>
-  </div>
+  <a href="#contact" class="nav-cta">Get Quote</a>
 </nav>
 
 <!-- HERO -->
@@ -983,14 +916,6 @@ canvas.steel-canvas{
 </footer>
 
 <script>
-/* Theme toggle */
-const btn = document.getElementById('themeBtn');
-const root = document.documentElement;
-function getTheme(){return root.dataset.theme || (matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light')}
-function setTheme(t){root.dataset.theme=t;btn.textContent=t==='dark'?'☀':'☾';localStorage.setItem('kd-theme',t)}
-const saved = localStorage.getItem('kd-theme');
-if(saved) setTheme(saved); else setTheme(getTheme());
-btn.addEventListener('click',()=>setTheme(getTheme()==='dark'?'light':'dark'));
 
 /* Scroll reveal */
 const revealEls = document.querySelectorAll('.reveal');
@@ -1021,13 +946,7 @@ function handleSubmit(e){
   function draw(){
     ctx.clearRect(0,0,W,H);
 
-    const isDark = document.documentElement.dataset.theme==='dark' ||
-      (!document.documentElement.dataset.theme && matchMedia('(prefers-color-scheme:dark)').matches);
-
-    const col = isDark ? {
-      beam:'#3A3A42', beamHi:'#5A5A66', red:'#C41E2A', redHi:'#E8301E',
-      spark:'#FF8040', grid:'rgba(255,255,255,0.04)'
-    } : {
+    const col = {
       beam:'#B0B8C4', beamHi:'#7A8898', red:'#C41E2A', redHi:'#E8301E',
       spark:'#FF5500', grid:'rgba(0,0,0,0.05)'
     };
