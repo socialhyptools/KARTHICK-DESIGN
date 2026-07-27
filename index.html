@@ -160,10 +160,9 @@ nav{
   letter-spacing:.02em;
   text-transform:uppercase;
   text-wrap:balance;
-  color:var(--white);
+  color:var(--text);
   margin-bottom:8px;
 }
-:root[data-theme="light"] .hero h1{color:var(--forge)}
 
 .hero h1 .accent{
   color:var(--red);
@@ -212,11 +211,10 @@ nav{
 .stat-n{
   font-family:var(--font-disp);
   font-size:2rem;
-  color:var(--white);
+  color:var(--text);
   line-height:1;
   font-variant-numeric:tabular-nums;
 }
-:root[data-theme="light"] .stat-n{color:var(--forge)}
 .stat-l{font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-sub);margin-top:4px}
 
 /* hero right – fabrication diagram */
@@ -299,8 +297,7 @@ h2.section-title span{color:var(--red)}
   transition:transform .3s ease;
 }
 .service-card:hover::after{transform:scaleX(1)}
-.service-card:hover{background:var(--bg);}
-:root[data-theme="light"] .service-card:hover{background:var(--ash)}
+.service-card:hover{background:var(--ash);}
 
 .service-icon{
   width:52px;height:52px;
@@ -687,29 +684,41 @@ canvas.steel-canvas{
 
   <div class="services-grid">
     <div class="service-card reveal">
+      <!-- Welding: flame / torch icon -->
       <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 2l-1.5 2.5-2.5.5 1.7 2-.4 2.5L12 8l2.7 1.5-.4-2.5 1.7-2-2.5-.5z"/><path d="M5 12l-2 1 2 1v3l3-1.5L11 18v-3l2-1-2-1v-3l-3 1.5z"/><line x1="12" y1="8" x2="12" y2="22"/><line x1="4" y1="14" x2="20" y2="14"/>
+        <path d="M12 2C9 5 8 8 10 11c-3-1-5 1-5 4 0 4 4 7 7 7s7-3 7-7c0-3-2-5-5-4 2-3 1-6-2-9z"/>
+        <path d="M12 14c0 1.1-.9 2-2 2"/>
       </svg>
       <h3>Welding</h3>
       <p>MIG, TIG and arc welding for structural and decorative metalwork. Precision joints built for strength and longevity under load.</p>
     </div>
     <div class="service-card reveal">
+      <!-- Gates & Railings: fence/barrier icon -->
       <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <rect x="3" y="3" width="18" height="18" rx="0"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/>
+        <line x1="3" y1="6" x2="3" y2="20"/><line x1="21" y1="6" x2="21" y2="20"/>
+        <line x1="9" y1="4" x2="9" y2="20"/><line x1="15" y1="4" x2="15" y2="20"/>
+        <line x1="1" y1="10" x2="23" y2="10"/><line x1="1" y1="16" x2="23" y2="16"/>
+        <polyline points="9 4 12 2 15 4"/>
       </svg>
       <h3>Gates &amp; Railings</h3>
       <p>Custom-designed MS gates, compound railings, staircase handrails, and balcony guards. Functional beauty in every form.</p>
     </div>
     <div class="service-card reveal">
+      <!-- Sheds & Structures: warehouse/industrial building -->
       <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="3 9 12 3 21 9"/><path d="M3 9v12h18V9"/><line x1="9" y1="21" x2="9" y2="13"/><line x1="15" y1="21" x2="15" y2="13"/>
+        <path d="M2 9l10-7 10 7v11a1 1 0 01-1 1H3a1 1 0 01-1-1V9z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+        <line x1="2" y1="9" x2="22" y2="9"/>
+        <line x1="8" y1="9" x2="8" y2="5"/><line x1="16" y1="9" x2="16" y2="5"/>
       </svg>
       <h3>Sheds &amp; Structures</h3>
       <p>Industrial-grade pre-engineered sheds, factory roofing, parking canopies, and MS structural frameworks for any scale.</p>
     </div>
     <div class="service-card reveal">
+      <!-- Custom Fabrication: settings/cog with wrench -->
       <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/>
+        <circle cx="12" cy="12" r="3"/>
+        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>
       </svg>
       <h3>Custom Fabrication</h3>
       <p>Bespoke metal solutions — machinery guards, mezzanine floors, storage racks, trolleys, and any bespoke structural requirement.</p>
@@ -752,7 +761,11 @@ canvas.steel-canvas{
     <div class="why-visual">
       <div class="why-cert reveal">
         <div class="cert-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          <!-- Handshake / network — BNI membership -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M16 11l-4 4-4-4"/><path d="M12 3v12"/>
+            <path d="M3 17l3-3h12l3 3v2a2 2 0 01-2 2H5a2 2 0 01-2-2v-2z"/>
+          </svg>
         </div>
         <div class="cert-text">
           <strong>BNI Proud Member</strong>
@@ -762,7 +775,13 @@ canvas.steel-canvas{
 
       <div class="why-cert reveal">
         <div class="cert-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
+          <!-- Award / medal — years of expertise -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="9" r="6"/>
+            <polyline points="9 22 12 17 15 22"/>
+            <line x1="7.5" y1="13.5" x2="5" y2="22"/>
+            <line x1="16.5" y1="13.5" x2="19" y2="22"/>
+          </svg>
         </div>
         <div class="cert-text">
           <strong>15+ Years of Expertise</strong>
@@ -772,7 +791,12 @@ canvas.steel-canvas{
 
       <div class="why-cert reveal">
         <div class="cert-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          <!-- Layers / full-service stack -->
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+            <polyline points="2 17 12 22 22 17"/>
+            <polyline points="2 12 12 17 22 12"/>
+          </svg>
         </div>
         <div class="cert-text">
           <strong>End-to-End Service</strong>
@@ -858,7 +882,11 @@ canvas.steel-canvas{
         </div>
         <div class="contact-item reveal">
           <div class="contact-ico">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="0"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/><line x1="12" y1="12" x2="12" y2="17"/><line x1="9" y1="14.5" x2="15" y2="14.5"/></svg>
+            <!-- Person / user icon -->
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="7" r="4"/>
+              <path d="M5.5 21a8.38 8.38 0 0113 0"/>
+            </svg>
           </div>
           <div>
             <div class="contact-lbl">Contact Person</div>
@@ -908,11 +936,8 @@ canvas.steel-canvas{
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo"><img src="Logo.png" alt="Karthick Design" style="height:36px;width:auto;object-fit:contain;display:block"></div>
   <div class="footer-copy">© 2025 Karthick Design – MS Fabrication Work, Chennai. All rights reserved.</div>
-  <div style="display:flex;gap:16px">
-    <a href="tel:+918608720195" style="font-size:.8rem;color:var(--red);font-weight:700;letter-spacing:.06em">8608720195</a>
-  </div>
+  <a href="tel:+918608720195" style="font-size:.8rem;color:var(--red);font-weight:700;letter-spacing:.06em">8608720195</a>
 </footer>
 
 <script>
