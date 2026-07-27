@@ -782,11 +782,26 @@ h2.section-title span{color:var(--red)}
   .footer-bottom{flex-direction:column;align-items:flex-start}
 }
 
-/* ── CANVAS SVG STEEL FRAME ── */
-canvas.steel-canvas{
-  width:100%;height:auto;
+/* ── HERO IMAGE ── */
+.hero-img{
+  width:100%;
+  height:460px;
+  object-fit:cover;
+  object-position:center;
   display:block;
+  border:4px solid #fff;
+  box-shadow:0 24px 64px rgba(0,0,0,0.18);
+  position:relative;
+  z-index:1;
 }
+.hero-visual::before{
+  content:'';
+  position:absolute;
+  top:20px;left:20px;right:-20px;bottom:-20px;
+  border:3px solid var(--red);
+  z-index:0;
+}
+.hero-visual{position:relative}
 
 /* ── SCROLL REVEAL ── */
 .reveal{
@@ -881,8 +896,8 @@ canvas.steel-canvas{
         </div>
       </div>
     </div>
-    <div class="hero-visual" aria-hidden="true">
-      <canvas id="steelCanvas" class="steel-canvas" width="480" height="360"></canvas>
+    <div class="hero-visual">
+      <img class="hero-img" src="Sheds & Structures.jpg" alt="MS Fabrication – Steel Shed Structure by Karthick Design">
     </div>
   </div>
 </section>
@@ -1387,136 +1402,6 @@ function handleSubmit(e){
   window.location.href=`mailto:karthickdesign28@gmail.com?subject=Quote Request – ${encodeURIComponent(service||'MS Fabrication')}&body=${body}`;
 }
 
-/* Steel frame canvas drawing */
-(function(){
-  const canvas = document.getElementById('steelCanvas');
-  if(!canvas) return;
-  const ctx = canvas.getContext('2d');
-  const W=480, H=360;
-
-  function draw(){
-    ctx.clearRect(0,0,W,H);
-
-    const col = {
-      beam:'#B0B8C4', beamHi:'#7A8898', red:'#C41E2A', redHi:'#E8301E',
-      spark:'#FF5500', grid:'rgba(0,0,0,0.05)'
-    };
-
-    // background mesh
-    ctx.strokeStyle = col.grid;
-    ctx.lineWidth = 1;
-    for(let x=0;x<W;x+=32){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,H);ctx.stroke()}
-    for(let y=0;y<H;y+=32){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(W,y);ctx.stroke()}
-
-    // I-beam cross-section helper
-    function ibeam(x,y,w,h){
-      const fw=w, fh=h*0.12, tw=w*0.18;
-      ctx.fillRect(x,y,fw,fh); // top flange
-      ctx.fillRect(x,y+h-fh,fw,fh); // bot flange
-      ctx.fillRect(x+(fw-tw)/2, y+fh, tw, h-fh*2); // web
-    }
-
-    // FRAME STRUCTURE – a simplified shed/structure diagram
-    // columns
-    ctx.fillStyle = col.beam;
-    ibeam(60,60,20,260); // left column
-    ibeam(400,60,20,260); // right column
-
-    // horizontal beam top
-    ctx.fillStyle = col.beamHi;
-    ibeam(60,60,360,16);
-
-    // roof pitch
-    ctx.strokeStyle = col.red;
-    ctx.lineWidth = 6;
-    ctx.beginPath();
-    ctx.moveTo(60,60);ctx.lineTo(240,10);ctx.lineTo(420,60);
-    ctx.stroke();
-
-    // rafter struts
-    ctx.strokeStyle = col.beam;
-    ctx.lineWidth = 3;
-    [[100,60,150,35],[180,60,210,20],[300,60,270,20],[380,60,330,35]].forEach(([x1,y1,x2,y2])=>{
-      ctx.beginPath();ctx.moveTo(x1,y1);ctx.lineTo(x2,y2);ctx.stroke();
-    });
-
-    // mezzanine level
-    ctx.fillStyle = col.beam;
-    ibeam(60,200,360,12);
-
-    // mid columns
-    ctx.fillStyle = col.beam;
-    ibeam(160,200,16,120);
-    ibeam(305,200,16,120);
-
-    // floor bracing X
-    ctx.strokeStyle = col.beamHi;
-    ctx.lineWidth = 2;
-    ctx.setLineDash([6,4]);
-    ctx.beginPath();ctx.moveTo(60,200);ctx.lineTo(160,320);ctx.stroke();
-    ctx.beginPath();ctx.moveTo(160,200);ctx.lineTo(60,320);ctx.stroke();
-    ctx.beginPath();ctx.moveTo(305,200);ctx.lineTo(420,320);ctx.stroke();
-    ctx.beginPath();ctx.moveTo(420,200);ctx.lineTo(305,320);ctx.stroke();
-    ctx.setLineDash([]);
-
-    // base plate
-    ctx.fillStyle = col.red;
-    ctx.fillRect(44,318,40,6);
-    ctx.fillRect(230,8,20,6);
-    ctx.fillRect(396,318,40,6);
-    ctx.fillRect(147,316,30,8);
-    ctx.fillRect(297,316,30,8);
-
-    // weld spark animation target
-    drawSpark(ctx, 240, 10, col.spark, sparks[0]);
-    drawSpark(ctx, 60, 60, col.spark, sparks[1]);
-    drawSpark(ctx, 420, 60, col.spark, sparks[2]);
-
-    // dimension lines
-    ctx.strokeStyle = isDark ? 'rgba(255,255,255,0.2)':'rgba(0,0,0,0.15)';
-    ctx.lineWidth=1;
-    ctx.setLineDash([4,4]);
-    ctx.beginPath();ctx.moveTo(24,60);ctx.lineTo(24,320);ctx.stroke();
-    ctx.setLineDash([]);
-    ctx.fillStyle = col.red;
-    ctx.font='bold 10px monospace';
-    ctx.textAlign='center';
-    ctx.fillText('260mm',24,195);
-  }
-
-  const sparks=[{t:0},{t:0.3},{t:0.6}];
-
-  function drawSpark(ctx,x,y,col,s){
-    const size = 8 + Math.sin(Date.now()/300 + s.t*Math.PI*2)*6;
-    const alpha = 0.6+Math.sin(Date.now()/200+s.t*6)*0.4;
-    ctx.save();
-    ctx.globalAlpha=alpha;
-    ctx.strokeStyle=col;
-    ctx.lineWidth=1.5;
-    const r=size;
-    for(let i=0;i<6;i++){
-      const a=i*Math.PI/3+Date.now()/800;
-      const len=r*(0.4+Math.random()*0.6);
-      ctx.beginPath();
-      ctx.moveTo(x,y);
-      ctx.lineTo(x+Math.cos(a)*len, y+Math.sin(a)*len);
-      ctx.stroke();
-    }
-    ctx.globalAlpha=alpha*0.8;
-    ctx.fillStyle=col;
-    ctx.beginPath();ctx.arc(x,y,2.5,0,Math.PI*2);ctx.fill();
-    ctx.restore();
-  }
-
-  function loop(){
-    draw();
-    requestAnimationFrame(loop);
-  }
-  loop();
-
-  // redraw on theme change
-  new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
-})();
 /* ── POPUP ── */
 </script>
 
