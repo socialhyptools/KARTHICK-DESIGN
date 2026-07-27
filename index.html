@@ -533,22 +533,145 @@ h2.section-title span{color:var(--red)}
 .form-note{font-size:.75rem;color:var(--steel);margin-top:10px;text-align:center}
 
 /* ── FOOTER ── */
-footer{
-  background:var(--ash);
-  border-top:1px solid var(--border);
-  padding:32px clamp(20px,5vw,80px);
-  display:flex;align-items:center;justify-content:space-between;
-  flex-wrap:wrap;gap:16px;
+.footer-main{
+  background:#111114;
+  padding:72px clamp(20px,5vw,80px) 48px;
 }
+.footer-grid{
+  display:grid;
+  grid-template-columns:1.6fr 1fr 1fr 1.2fr;
+  gap:48px;
+  max-width:1200px;
+}
+.footer-brand img{
+  height:72px;width:auto;
+  object-fit:contain;
+  mix-blend-mode:screen;
+  margin-bottom:20px;
+}
+.footer-desc{
+  font-size:.88rem;
+  color:#8A8FA8;
+  line-height:1.75;
+  max-width:280px;
+}
+.footer-social{
+  display:flex;gap:10px;margin-top:24px;
+}
+.footer-social a{
+  width:38px;height:38px;
+  border:1px solid rgba(255,255,255,0.1);
+  display:flex;align-items:center;justify-content:center;
+  color:#8A8FA8;
+  transition:border-color .2s,color .2s,background .2s;
+}
+.footer-social a:hover{border-color:var(--red);color:#fff;background:var(--red)}
+.footer-social svg{width:16px;height:16px}
 
-.footer-logo{
+.footer-col h4{
   font-family:var(--font-disp);
-  font-size:1rem;
-  letter-spacing:.12em;
-  color:var(--text);
+  font-size:.78rem;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:#fff;
+  margin-bottom:20px;
+  padding-bottom:12px;
+  border-bottom:2px solid var(--red);
+  display:inline-block;
 }
-.footer-logo span{color:var(--red)}
-.footer-copy{font-size:.75rem;color:var(--steel)}
+.footer-links{list-style:none;display:flex;flex-direction:column;gap:10px}
+.footer-links a{
+  font-size:.85rem;color:#8A8FA8;
+  display:flex;align-items:center;gap:8px;
+  transition:color .2s,gap .2s;
+}
+.footer-links a::before{
+  content:'';width:6px;height:1px;
+  background:var(--red);flex-shrink:0;
+  transition:width .2s;
+}
+.footer-links a:hover{color:#fff}
+.footer-links a:hover::before{width:12px}
+
+.footer-contact-list{list-style:none;display:flex;flex-direction:column;gap:14px}
+.footer-contact-list li{
+  display:flex;gap:12px;align-items:flex-start;
+  font-size:.85rem;color:#8A8FA8;line-height:1.5;
+}
+.footer-contact-list li svg{
+  width:16px;height:16px;flex-shrink:0;
+  color:var(--red);margin-top:2px;
+}
+.footer-contact-list a{color:#8A8FA8;transition:color .2s}
+.footer-contact-list a:hover{color:#fff}
+
+.footer-bottom{
+  background:#0A0A0C;
+  padding:18px clamp(20px,5vw,80px);
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:12px;
+}
+.footer-copy{font-size:.75rem;color:#555}
+.footer-bottom-links{display:flex;gap:20px;list-style:none}
+.footer-bottom-links a{
+  font-size:.75rem;color:#555;
+  transition:color .2s;
+}
+.footer-bottom-links a:hover{color:var(--red)}
+
+/* ── PRIVACY POLICY MODAL ── */
+#privacyModal{
+  position:fixed;inset:0;z-index:3000;
+  background:rgba(10,10,12,0.85);
+  backdrop-filter:blur(6px);
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;
+  opacity:0;pointer-events:none;
+  transition:opacity .3s ease;
+}
+#privacyModal.open{opacity:1;pointer-events:auto}
+.privacy-box{
+  background:#fff;
+  width:100%;max-width:700px;
+  max-height:85vh;
+  overflow-y:auto;
+  position:relative;
+}
+.privacy-box::-webkit-scrollbar{width:4px}
+.privacy-box::-webkit-scrollbar-thumb{background:var(--red)}
+.privacy-header{
+  background:var(--red);
+  padding:24px 32px;
+  display:flex;align-items:center;justify-content:space-between;
+  position:sticky;top:0;z-index:1;
+}
+.privacy-header h3{
+  font-family:var(--font-disp);
+  font-size:1.1rem;letter-spacing:.08em;
+  text-transform:uppercase;color:#fff;
+}
+.privacy-close{
+  background:none;border:none;cursor:pointer;
+  color:#fff;font-size:1.3rem;line-height:1;padding:4px;
+}
+.privacy-body{padding:36px 32px;color:#111}
+.privacy-body h4{
+  font-family:var(--font-disp);font-size:.9rem;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:var(--red);margin:28px 0 10px;
+}
+.privacy-body h4:first-child{margin-top:0}
+.privacy-body p{font-size:.88rem;line-height:1.75;color:#333;margin-bottom:8px}
+.privacy-body ul{padding-left:20px;margin-bottom:8px}
+.privacy-body ul li{font-size:.88rem;line-height:1.75;color:#333}
+
+@media(max-width:900px){
+  .footer-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:580px){
+  .footer-grid{grid-template-columns:1fr}
+  .footer-bottom{flex-direction:column;align-items:flex-start}
+}
 
 /* ── CANVAS SVG STEEL FRAME ── */
 canvas.steel-canvas{
@@ -935,12 +1058,155 @@ canvas.steel-canvas{
 </section>
 
 <!-- FOOTER -->
-<footer>
-  <div class="footer-copy">© 2025 Karthick Design – MS Fabrication Work, Chennai. All rights reserved.</div>
-  <a href="tel:+918608720195" style="font-size:.8rem;color:var(--red);font-weight:700;letter-spacing:.06em">8608720195</a>
-</footer>
+<div class="footer-main">
+  <div class="footer-grid">
+
+    <!-- Brand col -->
+    <div class="footer-brand">
+      <img src="Logo.png" alt="Karthick Design">
+      <p class="footer-desc">Chennai's trusted MS fabrication specialists — delivering strong, precise, and reliable metalwork for residential, commercial, and industrial projects across Tamil Nadu.</p>
+      <div class="footer-social">
+        <!-- Facebook -->
+        <a href="#" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+        </a>
+        <!-- Instagram -->
+        <a href="#" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+        </a>
+        <!-- WhatsApp -->
+        <a href="https://wa.me/918608720195" aria-label="WhatsApp" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+        </a>
+        <!-- YouTube -->
+        <a href="#" aria-label="YouTube">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 00-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 00-1.95 1.96A29 29 0 001 12a29 29 0 00.46 5.58 2.78 2.78 0 001.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 001.95-1.96A29 29 0 0023 12a29 29 0 00-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="currentColor" stroke="none"/></svg>
+        </a>
+      </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-col">
+      <h4>Quick Links</h4>
+      <ul class="footer-links">
+        <li><a href="#">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#why">Why Us</a></li>
+        <li><a href="#process">Our Process</a></li>
+        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="#" onclick="openPrivacy();return false;">Privacy Policy</a></li>
+      </ul>
+    </div>
+
+    <!-- Services -->
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="#services">Welding</a></li>
+        <li><a href="#services">Gates &amp; Railings</a></li>
+        <li><a href="#services">Sheds &amp; Structures</a></li>
+        <li><a href="#services">Custom Fabrication</a></li>
+        <li><a href="#services">Staircase Handrails</a></li>
+        <li><a href="#services">Parking Canopies</a></li>
+      </ul>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-col">
+      <h4>Contact Us</h4>
+      <ul class="footer-contact-list">
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
+          <a href="tel:+918608720195">+91 86087 20195</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:karthickdesign28@gmail.com">karthickdesign28@gmail.com</a>
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          33/15, C.P. Mudali Street, Pudupet, Chennai – 600 002
+        </li>
+        <li>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Mon – Sat: 9:00 AM – 7:00 PM
+        </li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+<div class="footer-bottom">
+  <p class="footer-copy">© 2025 Karthick Design – MS Fabrication Work, Chennai. All rights reserved.</p>
+  <ul class="footer-bottom-links">
+    <li><a href="#" onclick="openPrivacy();return false;">Privacy Policy</a></li>
+    <li><a href="#" onclick="openPrivacy();return false;">Terms of Use</a></li>
+  </ul>
+</div>
+
+<!-- PRIVACY POLICY MODAL -->
+<div id="privacyModal" role="dialog" aria-modal="true" aria-label="Privacy Policy">
+  <div class="privacy-box">
+    <div class="privacy-header">
+      <h3>Privacy Policy</h3>
+      <button class="privacy-close" onclick="closePrivacy()" aria-label="Close">✕</button>
+    </div>
+    <div class="privacy-body">
+      <h4>1. Information We Collect</h4>
+      <p>When you submit an enquiry through our website, we collect personal information including your name, phone number, email address, and project details. We may also collect your location for site visit purposes.</p>
+
+      <h4>2. How We Use Your Information</h4>
+      <ul>
+        <li>To respond to your quote requests and enquiries</li>
+        <li>To contact you regarding your fabrication project</li>
+        <li>To schedule site visits and deliver our services</li>
+        <li>To send relevant updates about our services (with your consent)</li>
+      </ul>
+
+      <h4>3. Information Sharing</h4>
+      <p>Karthick Design does not sell, trade, or rent your personal information to third parties. We may share your information only with trusted service partners directly involved in fulfilling your order.</p>
+
+      <h4>4. Data Security</h4>
+      <p>We take reasonable precautions to protect your personal information. All enquiry data submitted via our contact form is transmitted securely via email and is accessible only to our team.</p>
+
+      <h4>5. Cookies</h4>
+      <p>Our website does not use tracking cookies. We do not use any analytics or advertising cookies that collect personal data.</p>
+
+      <h4>6. Your Rights</h4>
+      <p>You have the right to request access to, correction of, or deletion of your personal data held by us. To exercise these rights, contact us at karthickdesign28@gmail.com.</p>
+
+      <h4>7. Contact</h4>
+      <p>For any privacy-related concerns, please reach out to S. Nagarajan at:<br>
+      📞 +91 86087 20195<br>
+      ✉ karthickdesign28@gmail.com<br>
+      📍 33/15, C.P. Mudali Street, Pudupet, Chennai – 600 002</p>
+
+      <h4>8. Updates to This Policy</h4>
+      <p>We may update this Privacy Policy from time to time. Changes will be reflected on this page. Last updated: July 2025.</p>
+    </div>
+  </div>
+</div>
 
 <script>
+
+/* Privacy modal */
+function openPrivacy(){
+  const m=document.getElementById('privacyModal');
+  m.classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closePrivacy(){
+  const m=document.getElementById('privacyModal');
+  m.classList.remove('open');
+  document.body.style.overflow='';
+}
+document.getElementById('privacyModal').addEventListener('click',function(e){
+  if(e.target===this) closePrivacy();
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape') closePrivacy();
+});
 
 /* Scroll reveal */
 const revealEls = document.querySelectorAll('.reveal');
