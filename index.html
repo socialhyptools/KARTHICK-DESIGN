@@ -110,10 +110,26 @@ nav{
   display:flex;align-items:center;gap:10px;
 }
 .nav-logo img{
-  height:44px;
+  height:60px;
   width:auto;
   object-fit:contain;
   display:block;
+  mix-blend-mode:multiply;
+}
+/* Dark theme — multiply would kill colors; show on a white circle instead */
+:root[data-theme="dark"] .nav-logo img{
+  mix-blend-mode:normal;
+  background:#fff;
+  border-radius:50%;
+  padding:3px;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]) .nav-logo img{
+    mix-blend-mode:normal;
+    background:#fff;
+    border-radius:50%;
+    padding:3px;
+  }
 }
 
 .nav-links{display:flex;gap:32px;list-style:none}
