@@ -398,11 +398,21 @@ h2.section-title span{color:var(--red)}
 .service-card:hover::after{transform:scaleX(1)}
 .service-card:hover{background:var(--ash);}
 
-.service-icon{
-  width:52px;height:52px;
-  margin-bottom:24px;
-  color:var(--red);
+.service-img{
+  width:100%;
+  height:200px;
+  object-fit:cover;
+  display:block;
+  margin:-40px -32px 28px -32px;
+  width:calc(100% + 64px);
+  filter:brightness(0.92);
+  transition:filter .3s, transform .4s;
 }
+.service-card:hover .service-img{
+  filter:brightness(1);
+  transform:scale(1.03);
+}
+.service-card{overflow:hidden}
 .service-card h3{
   font-family:var(--font-disp);
   font-size:1.1rem;
@@ -977,42 +987,22 @@ canvas.steel-canvas{
 
   <div class="services-grid">
     <div class="service-card reveal">
-      <!-- Welding: flame / torch icon -->
-      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 2C9 5 8 8 10 11c-3-1-5 1-5 4 0 4 4 7 7 7s7-3 7-7c0-3-2-5-5-4 2-3 1-6-2-9z"/>
-        <path d="M12 14c0 1.1-.9 2-2 2"/>
-      </svg>
+      <img class="service-img" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80" alt="Welding work with sparks">
       <h3>Welding</h3>
       <p>MIG, TIG and arc welding for structural and decorative metalwork. Precision joints built for strength and longevity under load.</p>
     </div>
     <div class="service-card reveal">
-      <!-- Gates & Railings: fence/barrier icon -->
-      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <line x1="3" y1="6" x2="3" y2="20"/><line x1="21" y1="6" x2="21" y2="20"/>
-        <line x1="9" y1="4" x2="9" y2="20"/><line x1="15" y1="4" x2="15" y2="20"/>
-        <line x1="1" y1="10" x2="23" y2="10"/><line x1="1" y1="16" x2="23" y2="16"/>
-        <polyline points="9 4 12 2 15 4"/>
-      </svg>
+      <img class="service-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Metal gates and railings">
       <h3>Gates &amp; Railings</h3>
       <p>Custom-designed MS gates, compound railings, staircase handrails, and balcony guards. Functional beauty in every form.</p>
     </div>
     <div class="service-card reveal">
-      <!-- Sheds & Structures: warehouse/industrial building -->
-      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M2 9l10-7 10 7v11a1 1 0 01-1 1H3a1 1 0 01-1-1V9z"/>
-        <polyline points="9 22 9 12 15 12 15 22"/>
-        <line x1="2" y1="9" x2="22" y2="9"/>
-        <line x1="8" y1="9" x2="8" y2="5"/><line x1="16" y1="9" x2="16" y2="5"/>
-      </svg>
+      <img class="service-img" src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&q=80" alt="Industrial shed and steel structure">
       <h3>Sheds &amp; Structures</h3>
       <p>Industrial-grade pre-engineered sheds, factory roofing, parking canopies, and MS structural frameworks for any scale.</p>
     </div>
     <div class="service-card reveal">
-      <!-- Custom Fabrication: settings/cog with wrench -->
-      <svg class="service-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-        <circle cx="12" cy="12" r="3"/>
-        <path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/>
-      </svg>
+      <img class="service-img" src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=600&q=80" alt="Custom metal fabrication workshop">
       <h3>Custom Fabrication</h3>
       <p>Bespoke metal solutions — machinery guards, mezzanine floors, storage racks, trolleys, and any bespoke structural requirement.</p>
     </div>
