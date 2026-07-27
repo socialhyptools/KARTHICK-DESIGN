@@ -268,6 +268,105 @@ h2.section-title{
 }
 h2.section-title span{color:var(--red)}
 
+/* ── ABOUT ── */
+.about{background:var(--surface);padding:100px clamp(20px,5vw,80px)}
+.about-inner{
+  display:grid;grid-template-columns:1fr 1.2fr;
+  gap:80px;align-items:center;
+  max-width:1200px;
+}
+.about-img-wrap{
+  position:relative;
+  background:var(--bg2);
+  padding:48px;
+  display:flex;flex-direction:column;align-items:center;gap:32px;
+}
+.about-corner-tl{
+  position:absolute;top:-6px;left:-6px;
+  width:40px;height:40px;
+  border-top:4px solid var(--red);
+  border-left:4px solid var(--red);
+}
+.about-corner-br{
+  position:absolute;bottom:-6px;right:-6px;
+  width:40px;height:40px;
+  border-bottom:4px solid var(--red);
+  border-right:4px solid var(--red);
+}
+.about-logo-big{
+  width:220px;height:220px;
+  object-fit:contain;
+  mix-blend-mode:multiply;
+}
+.about-badge-box{
+  width:100%;
+  background:var(--red);
+  display:flex;align-items:center;justify-content:center;
+  gap:0;
+}
+.about-badge-item{
+  flex:1;
+  padding:18px 16px;
+  text-align:center;
+}
+.about-badge-n{
+  display:block;
+  font-family:var(--font-disp);
+  font-size:1.8rem;
+  color:#fff;
+  line-height:1;
+  font-variant-numeric:tabular-nums;
+}
+.about-badge-l{
+  display:block;
+  font-size:.68rem;
+  font-weight:600;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:rgba(255,255,255,0.75);
+  margin-top:4px;
+}
+.about-badge-divider{width:1px;background:rgba(255,255,255,0.25);align-self:stretch}
+
+.about-para{
+  font-size:.95rem;
+  color:var(--text-sub);
+  line-height:1.8;
+  margin-top:20px;
+}
+.about-para strong{color:var(--text);font-weight:700}
+
+.about-pillars{
+  display:flex;flex-direction:column;gap:0;
+  margin-top:32px;
+  border-top:1px solid var(--border);
+}
+.about-pillar{
+  display:flex;align-items:flex-start;gap:16px;
+  padding:18px 0;
+  border-bottom:1px solid var(--border);
+}
+.about-pillar-icon{
+  width:40px;height:40px;flex-shrink:0;
+  background:rgba(196,30,42,0.1);
+  border:1px solid rgba(196,30,42,0.25);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--red);
+}
+.about-pillar-icon svg{width:18px;height:18px}
+.about-pillar strong{
+  display:block;
+  font-size:.88rem;font-weight:700;
+  color:var(--text);margin-bottom:2px;
+}
+.about-pillar p{font-size:.82rem;color:var(--text-sub);margin:0}
+
+@media(max-width:900px){
+  .about-inner{grid-template-columns:1fr}
+  .about-img-wrap{padding:32px}
+  .about-logo-big{width:160px;height:160px}
+}
+
 /* ── SERVICES ── */
 .services{background:var(--bg2)}
 
@@ -725,7 +824,7 @@ canvas.steel-canvas{
   </a>
   <ul class="nav-links">
     <li><a href="#">Home</a></li>
-    <li><a href="#why">About</a></li>
+    <li><a href="#about">About</a></li>
     <li><a href="#services">Services</a></li>
     <li><a href="#why">Why Us</a></li>
     <li><a href="#process">Process</a></li>
@@ -800,6 +899,75 @@ canvas.steel-canvas{
     In-House Skilled Team
   </div>
 </div>
+
+<!-- ABOUT -->
+<section id="about" class="about">
+  <div class="about-inner">
+    <div class="about-visual reveal">
+      <div class="about-img-wrap">
+        <img src="Logo.png" alt="Karthick Design" class="about-logo-big">
+        <div class="about-badge-box">
+          <div class="about-badge-item">
+            <span class="about-badge-n">15+</span>
+            <span class="about-badge-l">Years in Business</span>
+          </div>
+          <div class="about-badge-divider"></div>
+          <div class="about-badge-item">
+            <span class="about-badge-n">500+</span>
+            <span class="about-badge-l">Projects Completed</span>
+          </div>
+        </div>
+        <!-- decorative corner accent -->
+        <div class="about-corner-tl"></div>
+        <div class="about-corner-br"></div>
+      </div>
+    </div>
+
+    <div class="about-content">
+      <div class="section-label reveal">Who We Are</div>
+      <h2 class="section-title reveal">Chennai's Trusted<br><span>MS Fabrication</span> Experts</h2>
+
+      <p class="about-para reveal">
+        Karthick Design is a Chennai-based MS fabrication company with over 15 years of hands-on experience in structural metalwork. Founded by <strong>S. Nagarajan</strong>, we have built our reputation one weld at a time — delivering strong, precise, and reliable fabrication across residential, commercial, and industrial projects.
+      </p>
+      <p class="about-para reveal">
+        As a <strong>BNI Proud Member</strong>, we are committed to growing through trust and referrals. Every project we take on is treated with the same care and commitment — whether it's a single gate or a large industrial shed.
+      </p>
+
+      <div class="about-pillars reveal">
+        <div class="about-pillar">
+          <div class="about-pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+          </div>
+          <div>
+            <strong>Quality Material</strong>
+            <p>Certified MS sections from trusted suppliers only.</p>
+          </div>
+        </div>
+        <div class="about-pillar">
+          <div class="about-pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          </div>
+          <div>
+            <strong>Skilled In-House Team</strong>
+            <p>Experienced welders and fabricators, all under one roof.</p>
+          </div>
+        </div>
+        <div class="about-pillar">
+          <div class="about-pillar-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <div>
+            <strong>Customer First</strong>
+            <p>Transparent quotes, clear timelines, zero surprises.</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="#contact" class="btn-primary reveal" style="display:inline-flex;margin-top:8px">Get a Free Quote →</a>
+    </div>
+  </div>
+</section>
 
 <!-- SERVICES -->
 <section id="services" class="services">
