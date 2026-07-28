@@ -83,7 +83,7 @@ nav{
   mix-blend-mode:multiply;
 }
 
-.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links{display:flex;gap:32px;list-style:none;align-items:center}
 .nav-links a{
   font-size:.82rem;font-weight:600;
   letter-spacing:.12em;text-transform:uppercase;
@@ -91,6 +91,43 @@ nav{
   transition:color .2s;
 }
 .nav-links a:hover{color:var(--red)}
+
+/* dropdown */
+.nav-dropdown{position:relative}
+.nav-dropdown>a{display:flex;align-items:center;gap:5px;cursor:pointer}
+.nav-dropdown>a::after{
+  content:'';width:7px;height:7px;
+  border-right:2px solid currentColor;border-bottom:2px solid currentColor;
+  transform:rotate(45deg) translateY(-2px);
+  transition:transform .2s;
+}
+.nav-dropdown:hover>a::after{transform:rotate(225deg) translateY(-2px)}
+.nav-drop-menu{
+  position:absolute;top:calc(100% + 12px);left:50%;
+  transform:translateX(-50%);
+  background:#fff;
+  min-width:220px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.12);
+  border-top:3px solid var(--red);
+  opacity:0;pointer-events:none;
+  transition:opacity .2s,transform .2s;
+  transform:translateX(-50%) translateY(-8px);
+  z-index:200;
+}
+.nav-dropdown:hover .nav-drop-menu{
+  opacity:1;pointer-events:auto;
+  transform:translateX(-50%) translateY(0);
+}
+.nav-drop-menu a{
+  display:block;padding:12px 20px;
+  font-size:.78rem;font-weight:600;
+  letter-spacing:.1em;text-transform:uppercase;
+  color:var(--text-sub);
+  border-bottom:1px solid var(--border);
+  transition:background .15s,color .15s,padding-left .15s;
+}
+.nav-drop-menu a:last-child{border-bottom:none}
+.nav-drop-menu a:hover{background:var(--bg);color:var(--red);padding-left:26px}
 
 .nav-cta{
   background:var(--red);
@@ -869,7 +906,15 @@ h2.section-title span{color:var(--red)}
   <ul class="nav-links">
     <li><a href="#">Home</a></li>
     <li><a href="#about">About</a></li>
-    <li><a href="#services">Services</a></li>
+    <li class="nav-dropdown">
+      <a href="#services">Services</a>
+      <div class="nav-drop-menu">
+        <a href="welding.html">Welding</a>
+        <a href="gates-railings.html">Gates &amp; Railings</a>
+        <a href="sheds-structures.html">Sheds &amp; Structures</a>
+        <a href="custom-fabrication.html">Custom Fabrication</a>
+      </div>
+    </li>
     <li><a href="#why">Why Us</a></li>
     <li><a href="#process">Process</a></li>
     <li><a href="#contact">Contact</a></li>
@@ -1013,25 +1058,25 @@ h2.section-title span{color:var(--red)}
 
   <div class="services-grid">
     <div class="service-card reveal">
-      <img class="service-img" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80" alt="Welding sparks on metal">
+      <img class="service-img" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=70" alt="Welding sparks on metal" loading="lazy" decoding="async" width="600" height="200">
       <h3>Welding</h3>
       <p>MIG, TIG and arc welding for structural and decorative metalwork. Precision joints built for strength and longevity under load.</p>
       <a href="welding.html" class="service-btn">Learn More →</a>
     </div>
     <div class="service-card reveal">
-      <img class="service-img" src="Gates & Railings.jpg" alt="Metal gates and iron railings">
+      <img class="service-img" src="Gates & Railings.jpg" alt="Metal gates and iron railings" loading="lazy" decoding="async" width="600" height="200">
       <h3>Gates &amp; Railings</h3>
       <p>Custom-designed MS gates, compound railings, staircase handrails, and balcony guards. Functional beauty in every form.</p>
       <a href="gates-railings.html" class="service-btn">Learn More →</a>
     </div>
     <div class="service-card reveal">
-      <img class="service-img" src="Sheds & Structures.jpg" alt="Steel industrial shed structure">
+      <img class="service-img" src="Sheds & Structures.jpg" alt="Steel industrial shed structure" loading="lazy" decoding="async" width="600" height="200">
       <h3>Sheds &amp; Structures</h3>
       <p>Industrial-grade pre-engineered sheds, factory roofing, parking canopies, and MS structural frameworks for any scale.</p>
       <a href="sheds-structures.html" class="service-btn">Learn More →</a>
     </div>
     <div class="service-card reveal">
-      <img class="service-img" src="Custom Fabrication.jpg" alt="Custom metal fabrication and cutting">
+      <img class="service-img" src="Custom Fabrication.jpg" alt="Custom metal fabrication and cutting" loading="lazy" decoding="async" width="600" height="200">
       <h3>Custom Fabrication</h3>
       <p>Bespoke metal solutions — machinery guards, mezzanine floors, storage racks, trolleys, and any bespoke structural requirement.</p>
       <a href="custom-fabrication.html" class="service-btn">Learn More →</a>
