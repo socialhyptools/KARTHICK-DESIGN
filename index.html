@@ -103,15 +103,15 @@ nav{
 }
 .nav-dropdown:hover>a::after{transform:rotate(225deg) translateY(-2px)}
 .nav-drop-menu{
-  position:absolute;top:calc(100% + 12px);left:50%;
-  transform:translateX(-50%);
+  position:absolute;top:100%;left:50%;
+  transform:translateX(-50%) translateY(-4px);
   background:#fff;
   min-width:220px;
   box-shadow:0 8px 32px rgba(0,0,0,0.12);
   border-top:3px solid var(--red);
+  padding-top:4px;
   opacity:0;pointer-events:none;
   transition:opacity .2s,transform .2s;
-  transform:translateX(-50%) translateY(-8px);
   z-index:200;
 }
 .nav-dropdown:hover .nav-drop-menu{
