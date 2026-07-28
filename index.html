@@ -430,6 +430,17 @@ h2.section-title span{color:var(--red)}
   margin-bottom:12px;
 }
 .service-card p{font-size:.88rem;color:var(--text-sub);line-height:1.7}
+.service-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  margin-top:18px;
+  font-size:.82rem;font-weight:700;
+  letter-spacing:.08em;text-transform:uppercase;
+  color:var(--red);
+  border-bottom:2px solid var(--red);
+  padding-bottom:2px;
+  transition:gap .2s,color .2s;
+}
+.service-card:hover .service-btn{gap:12px;color:var(--red-hot)}
 
 /* ── WHY US ── */
 .why{
@@ -1001,26 +1012,30 @@ h2.section-title span{color:var(--red)}
   <p class="reveal" style="margin-top:16px;color:var(--text-sub);max-width:560px;font-size:.95rem">From decorative gates to industrial sheds — every weld, every joint, crafted to exact specification.</p>
 
   <div class="services-grid">
-    <a class="service-card reveal" href="welding.html">
+    <div class="service-card reveal">
       <img class="service-img" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=80" alt="Welding sparks on metal">
       <h3>Welding</h3>
       <p>MIG, TIG and arc welding for structural and decorative metalwork. Precision joints built for strength and longevity under load.</p>
-    </a>
-    <a class="service-card reveal" href="gates-railings.html">
+      <a href="welding.html" class="service-btn">Learn More →</a>
+    </div>
+    <div class="service-card reveal">
       <img class="service-img" src="Gates & Railings.jpg" alt="Metal gates and iron railings">
       <h3>Gates &amp; Railings</h3>
       <p>Custom-designed MS gates, compound railings, staircase handrails, and balcony guards. Functional beauty in every form.</p>
-    </a>
-    <a class="service-card reveal" href="sheds-structures.html">
+      <a href="gates-railings.html" class="service-btn">Learn More →</a>
+    </div>
+    <div class="service-card reveal">
       <img class="service-img" src="Sheds & Structures.jpg" alt="Steel industrial shed structure">
       <h3>Sheds &amp; Structures</h3>
       <p>Industrial-grade pre-engineered sheds, factory roofing, parking canopies, and MS structural frameworks for any scale.</p>
-    </a>
-    <a class="service-card reveal" href="custom-fabrication.html">
+      <a href="sheds-structures.html" class="service-btn">Learn More →</a>
+    </div>
+    <div class="service-card reveal">
       <img class="service-img" src="Custom Fabrication.jpg" alt="Custom metal fabrication and cutting">
       <h3>Custom Fabrication</h3>
       <p>Bespoke metal solutions — machinery guards, mezzanine floors, storage racks, trolleys, and any bespoke structural requirement.</p>
-    </a>
+      <a href="custom-fabrication.html" class="service-btn">Learn More →</a>
+    </div>
   </div>
 </section>
 
