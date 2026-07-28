@@ -62,10 +62,12 @@ h2.section-title span{color:var(--red)}
 .features{background:var(--bg)}
 .features-inner{max-width:1100px;margin:0 auto}
 .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
-.feat-card{background:var(--surface);padding:36px 28px;border-top:3px solid var(--red)}
-.feat-card svg{width:36px;height:36px;color:var(--red);margin-bottom:16px}
-.feat-card h3{font-family:'Poppins','Poppins Fallback',sans-serif;font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:10px}
-.feat-card p{font-size:.88rem;color:var(--text-sub);line-height:1.7}
+.feat-card{background:var(--surface);border-top:3px solid var(--red);overflow:hidden;display:flex;flex-direction:column}
+.feat-card-img{width:100%;height:180px;object-fit:cover;display:block;filter:brightness(0.92);transition:transform .4s,filter .3s}
+.feat-card:hover .feat-card-img{transform:scale(1.04);filter:brightness(1)}
+.feat-card-body{padding:24px 24px 28px;flex:1}
+.feat-card h3{font-family:'Poppins','Poppins Fallback',sans-serif;font-size:1rem;font-weight:600;color:var(--text);margin-bottom:8px}
+.feat-card p{font-size:.86rem;color:var(--text-sub);line-height:1.7}
 .applications{background:var(--surface)}
 .applications-inner{max-width:1100px;margin:0 auto}
 .app-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
@@ -173,19 +175,25 @@ h2.section-title span{color:var(--red)}
     <h2 class="section-title reveal">How We Handle <span>Custom Projects</span></h2>
     <div class="features-grid">
       <div class="feat-card reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
-        <h3>Design Consultation</h3>
-        <p>We discuss your requirement in detail — dimensions, load capacity, finish, and budget. We work from your sketch or idea, no formal drawings needed.</p>
+        <img class="feat-card-img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=75" alt="Design consultation and planning" loading="lazy">
+        <div class="feat-card-body">
+          <h3>Design Consultation</h3>
+          <p>We discuss your requirement in detail — dimensions, load capacity, finish, and budget. We work from your sketch or idea, no formal drawings needed.</p>
+        </div>
       </div>
       <div class="feat-card reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg>
-        <h3>In-House Fabrication</h3>
-        <p>All fabrication happens in our own workshop. We cut, bend, weld, and finish every piece ourselves — no outsourcing, full quality control throughout.</p>
+        <img class="feat-card-img" src="Custom Fabrication.jpg" alt="In-house metal fabrication workshop" loading="lazy">
+        <div class="feat-card-body">
+          <h3>In-House Fabrication</h3>
+          <p>All fabrication happens in our own workshop. We cut, bend, weld, and finish every piece ourselves — no outsourcing, full quality control throughout.</p>
+        </div>
       </div>
       <div class="feat-card reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        <h3>Delivery &amp; Installation</h3>
-        <p>We deliver to your site and handle installation where required. Final inspection is done before handover to ensure everything fits and functions perfectly.</p>
+        <img class="feat-card-img" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=75" alt="On-site delivery and installation" loading="lazy">
+        <div class="feat-card-body">
+          <h3>Delivery &amp; Installation</h3>
+          <p>We deliver to your site and handle installation where required. Final inspection is done before handover to ensure everything fits and functions perfectly.</p>
+        </div>
       </div>
     </div>
   </div>

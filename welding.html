@@ -74,10 +74,12 @@ h2.section-title span{color:var(--red)}
 .features{background:var(--bg)}
 .features-inner{max-width:1100px;margin:0 auto}
 .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
-.feat-card{background:var(--surface);padding:36px 28px;border-top:3px solid var(--red)}
-.feat-card svg{width:36px;height:36px;color:var(--red);margin-bottom:16px}
-.feat-card h3{font-family:'Poppins','Poppins Fallback',sans-serif;font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:10px}
-.feat-card p{font-size:.88rem;color:var(--text-sub);line-height:1.7}
+.feat-card{background:var(--surface);border-top:3px solid var(--red);overflow:hidden;display:flex;flex-direction:column}
+.feat-card-img{width:100%;height:180px;object-fit:cover;display:block;filter:brightness(0.92);transition:transform .4s,filter .3s}
+.feat-card:hover .feat-card-img{transform:scale(1.04);filter:brightness(1)}
+.feat-card-body{padding:24px 24px 28px;flex:1}
+.feat-card h3{font-family:'Poppins','Poppins Fallback',sans-serif;font-size:1rem;font-weight:600;color:var(--text);margin-bottom:8px}
+.feat-card p{font-size:.86rem;color:var(--text-sub);line-height:1.7}
 
 /* APPLICATIONS */
 .applications{background:var(--surface)}
@@ -210,19 +212,25 @@ h2.section-title span{color:var(--red)}
     <h2 class="section-title reveal">Welding <span>Types We Offer</span></h2>
     <div class="features-grid">
       <div class="feat-card reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-        <h3>MIG Welding</h3>
-        <p>Metal Inert Gas welding for fast, clean joins on mild steel, stainless steel and aluminium. Ideal for production runs and structural work requiring high deposition rates.</p>
+        <img class="feat-card-img" src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=600&q=75" alt="MIG Welding" loading="lazy">
+        <div class="feat-card-body">
+          <h3>MIG Welding</h3>
+          <p>Metal Inert Gas welding for fast, clean joins on mild steel, stainless steel and aluminium. Ideal for production runs and structural work requiring high deposition rates.</p>
+        </div>
       </div>
       <div class="feat-card reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
-        <h3>TIG Welding</h3>
-        <p>Tungsten Inert Gas welding for precise, high-quality welds on thinner materials. Perfect for decorative metalwork, handrails, and applications requiring a clean aesthetic finish.</p>
+        <img class="feat-card-img" src="https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=600&q=75" alt="TIG Welding precision work" loading="lazy">
+        <div class="feat-card-body">
+          <h3>TIG Welding</h3>
+          <p>Tungsten Inert Gas welding for precise, high-quality welds on thinner materials. Perfect for decorative metalwork, handrails, and applications requiring a clean aesthetic finish.</p>
+        </div>
       </div>
       <div class="feat-card reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-        <h3>Arc Welding</h3>
-        <p>Shielded Metal Arc Welding (SMAW) for heavy-duty structural fabrication. Used on thick MS sections, industrial frameworks, and all large-scale construction projects.</p>
+        <img class="feat-card-img" src="https://images.unsplash.com/photo-1565688527133-64a1c94d3a5e?w=600&q=75" alt="Arc welding structural steel" loading="lazy">
+        <div class="feat-card-body">
+          <h3>Arc Welding</h3>
+          <p>Shielded Metal Arc Welding (SMAW) for heavy-duty structural fabrication. Used on thick MS sections, industrial frameworks, and all large-scale construction projects.</p>
+        </div>
       </div>
     </div>
   </div>

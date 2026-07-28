@@ -62,10 +62,12 @@ h2.section-title span{color:var(--red)}
 .features{background:var(--bg)}
 .features-inner{max-width:1100px;margin:0 auto}
 .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
-.feat-card{background:var(--surface);padding:36px 28px;border-top:3px solid var(--red)}
-.feat-card svg{width:36px;height:36px;color:var(--red);margin-bottom:16px}
-.feat-card h3{font-family:'Poppins','Poppins Fallback',sans-serif;font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:10px}
-.feat-card p{font-size:.88rem;color:var(--text-sub);line-height:1.7}
+.feat-card{background:var(--surface);border-top:3px solid var(--red);overflow:hidden;display:flex;flex-direction:column}
+.feat-card-img{width:100%;height:180px;object-fit:cover;display:block;filter:brightness(0.92);transition:transform .4s,filter .3s}
+.feat-card:hover .feat-card-img{transform:scale(1.04);filter:brightness(1)}
+.feat-card-body{padding:24px 24px 28px;flex:1}
+.feat-card h3{font-family:'Poppins','Poppins Fallback',sans-serif;font-size:1rem;font-weight:600;color:var(--text);margin-bottom:8px}
+.feat-card p{font-size:.86rem;color:var(--text-sub);line-height:1.7}
 .applications{background:var(--surface)}
 .applications-inner{max-width:1100px;margin:0 auto}
 .app-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
@@ -173,19 +175,25 @@ h2.section-title span{color:var(--red)}
     <h2 class="section-title reveal">Types of <span>Gates &amp; Railings</span> We Make</h2>
     <div class="features-grid">
       <div class="feat-card reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg>
-        <h3>Compound Gates</h3>
-        <p>Single and double-leaf MS compound gates for residential and commercial properties. Custom sizes, designs, and powder-coat finishes available.</p>
+        <img class="feat-card-img" src="Gates & Railings.jpg" alt="MS compound gates" loading="lazy">
+        <div class="feat-card-body">
+          <h3>Compound Gates</h3>
+          <p>Single and double-leaf MS compound gates for residential and commercial properties. Custom sizes, designs, and powder-coat finishes available.</p>
+        </div>
       </div>
       <div class="feat-card reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-        <h3>Staircase Railings</h3>
-        <p>Interior and exterior staircase handrails in MS or stainless steel. Designed for safety and elegance — straight, curved, or spiral staircases.</p>
+        <img class="feat-card-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" alt="Staircase railings" loading="lazy">
+        <div class="feat-card-body">
+          <h3>Staircase Railings</h3>
+          <p>Interior and exterior staircase handrails in MS or stainless steel. Designed for safety and elegance — straight, curved, or spiral staircases.</p>
+        </div>
       </div>
       <div class="feat-card reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 20h20M4 20V10M8 20V4M12 20V10M16 20V4M20 20V10"/></svg>
-        <h3>Balcony Guards</h3>
-        <p>Safety railings for balconies, terraces, and rooftops. Strong MS frames with various infill options — flat bars, square pipes, or decorative inserts.</p>
+        <img class="feat-card-img" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=75" alt="Balcony guard railings" loading="lazy">
+        <div class="feat-card-body">
+          <h3>Balcony Guards</h3>
+          <p>Safety railings for balconies, terraces, and rooftops. Strong MS frames with various infill options — flat bars, square pipes, or decorative inserts.</p>
+        </div>
       </div>
     </div>
   </div>

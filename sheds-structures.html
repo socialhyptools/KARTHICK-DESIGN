@@ -62,10 +62,12 @@ h2.section-title span{color:var(--red)}
 .features{background:var(--bg)}
 .features-inner{max-width:1100px;margin:0 auto}
 .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
-.feat-card{background:var(--surface);padding:36px 28px;border-top:3px solid var(--red)}
-.feat-card svg{width:36px;height:36px;color:var(--red);margin-bottom:16px}
-.feat-card h3{font-family:'Poppins','Poppins Fallback',sans-serif;font-size:1.1rem;font-weight:600;color:var(--text);margin-bottom:10px}
-.feat-card p{font-size:.88rem;color:var(--text-sub);line-height:1.7}
+.feat-card{background:var(--surface);border-top:3px solid var(--red);overflow:hidden;display:flex;flex-direction:column}
+.feat-card-img{width:100%;height:180px;object-fit:cover;display:block;filter:brightness(0.92);transition:transform .4s,filter .3s}
+.feat-card:hover .feat-card-img{transform:scale(1.04);filter:brightness(1)}
+.feat-card-body{padding:24px 24px 28px;flex:1}
+.feat-card h3{font-family:'Poppins','Poppins Fallback',sans-serif;font-size:1rem;font-weight:600;color:var(--text);margin-bottom:8px}
+.feat-card p{font-size:.86rem;color:var(--text-sub);line-height:1.7}
 .applications{background:var(--surface)}
 .applications-inner{max-width:1100px;margin:0 auto}
 .app-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
@@ -173,19 +175,25 @@ h2.section-title span{color:var(--red)}
     <h2 class="section-title reveal">Types of <span>Sheds &amp; Structures</span> We Build</h2>
     <div class="features-grid">
       <div class="feat-card reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/></svg>
-        <h3>Industrial Sheds</h3>
-        <p>Pre-engineered MS sheds for factories, workshops, and storage. Designed for large clear spans with minimal interior columns.</p>
+        <img class="feat-card-img" src="Sheds & Structures.jpg" alt="Industrial MS shed" loading="lazy">
+        <div class="feat-card-body">
+          <h3>Industrial Sheds</h3>
+          <p>Pre-engineered MS sheds for factories, workshops, and storage. Designed for large clear spans with minimal interior columns.</p>
+        </div>
       </div>
       <div class="feat-card reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 6l11-4 11 4M1 6v12l11 4 11-4V6M12 2v20"/></svg>
-        <h3>Parking Canopies</h3>
-        <p>MS frame canopies for vehicle parking areas — residential, commercial, and institutional. Polycarbonate or roofing sheet options available.</p>
+        <img class="feat-card-img" src="https://images.unsplash.com/photo-1590499168980-48e0a8d3f3a7?w=600&q=75" alt="Parking canopy structure" loading="lazy">
+        <div class="feat-card-body">
+          <h3>Parking Canopies</h3>
+          <p>MS frame canopies for vehicle parking areas — residential, commercial, and institutional. Polycarbonate or roofing sheet options available.</p>
+        </div>
       </div>
       <div class="feat-card reveal">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        <h3>Factory Roofing</h3>
-        <p>Roofing structure replacement and new installations with MS purlins, trusses, and ridge caps for complete weatherproofing.</p>
+        <img class="feat-card-img" src="https://images.unsplash.com/photo-1558449028-b53a39d100fc?w=600&q=75" alt="Factory roofing structure" loading="lazy">
+        <div class="feat-card-body">
+          <h3>Factory Roofing</h3>
+          <p>Roofing structure replacement and new installations with MS purlins, trusses, and ridge caps for complete weatherproofing.</p>
+        </div>
       </div>
     </div>
   </div>
