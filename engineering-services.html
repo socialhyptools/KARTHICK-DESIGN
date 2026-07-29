@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Gates & Railings Chennai | Karthick Design – MS Fabrication</title>
-<meta name="description" content="Custom MS gates, compound railings, staircase handrails and balcony guards in Chennai. Karthick Design. Call 8608720195 for a free quote.">
+<title>Engineering Services Chennai | Karthick Design – MS Fabrication</title>
+<meta name="description" content="Professional engineering services in Chennai — structural design, site surveys, drawings, and project management for MS fabrication works. Call Karthick Design: 8608720195.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
@@ -16,6 +16,8 @@ html{scroll-behavior:smooth}
 body{background:var(--bg);color:var(--text);font-family:var(--font-body);line-height:1.6;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
+
+/* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(20px,5vw,80px);height:88px;background:rgba(242,241,245,0.95);backdrop-filter:blur(14px);border-bottom:2px solid rgba(196,30,42,0.15)}
 .nav-logo img{height:80px;width:auto;object-fit:contain;mix-blend-mode:multiply}
 .nav-links{display:flex;gap:32px;list-style:none}
@@ -32,10 +34,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .nav-drop-menu a{display:block;padding:12px 20px;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--text-sub);border-bottom:1px solid rgba(0,0,0,0.07);transition:background .15s,color .15s,padding-left .15s}
 .nav-drop-menu a:last-child{border-bottom:none}
 .nav-drop-menu a:hover{background:var(--bg);color:var(--red);padding-left:26px}
+
+/* STICKY CALL */
 .sticky-call{position:fixed;bottom:24px;right:24px;z-index:999;background:var(--red);color:#fff;font-family:var(--font-body);font-weight:700;font-size:.9rem;letter-spacing:.04em;padding:14px 22px;display:flex;align-items:center;gap:10px;box-shadow:0 8px 32px rgba(196,30,42,0.5);transition:background .2s,transform .15s;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%)}
 .sticky-call:hover{background:var(--red-hot);transform:translateY(-2px)}
 .sticky-call svg{width:18px;height:18px;flex-shrink:0}
-.hero{position:relative;min-height:70vh;display:flex;align-items:center;padding:140px clamp(20px,5vw,80px) 80px;background:url('Gates & Railings.jpg') center center/cover no-repeat}
+
+/* HERO */
+.hero{position:relative;min-height:70vh;display:flex;align-items:center;padding:140px clamp(20px,5vw,80px) 80px;background:url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1400&q=80') center center/cover no-repeat}
 .hero::before{content:'';position:absolute;inset:0;background:linear-gradient(100deg,rgba(10,10,12,0.90) 0%,rgba(10,10,12,0.70) 60%,rgba(10,10,12,0.30) 100%);z-index:0}
 .hero::after{content:'';position:absolute;bottom:0;left:0;width:100%;height:4px;background:var(--red);z-index:1}
 .hero-inner{position:relative;z-index:2;max-width:760px}
@@ -51,15 +57,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:cen
 .btn-secondary{display:inline-flex;align-items:center;gap:10px;border:2px solid rgba(255,255,255,0.35);color:#fff;font-weight:600;font-size:.88rem;letter-spacing:.06em;padding:13px 26px;transition:border-color .2s,background .2s}
 .btn-secondary:hover{border-color:#fff;background:rgba(255,255,255,0.08)}
 .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+
+/* SECTION COMMON */
 section{padding:90px clamp(20px,5vw,80px)}
 .section-label{display:inline-flex;align-items:center;gap:12px;font-size:.72rem;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--red);margin-bottom:16px}
 .section-label::before{content:'';width:24px;height:2px;background:var(--red)}
 h2.section-title{font-family:'Poppins','Poppins Fallback',sans-serif;font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:600;line-height:1.2;color:var(--text);margin-bottom:20px}
 h2.section-title span{color:var(--red)}
+
+/* OVERVIEW */
 .overview{background:var(--surface)}
 .overview-inner{max-width:1100px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .overview-img{width:100%;height:420px;object-fit:cover;border-left:4px solid var(--red)}
 .overview-text p{font-size:.98rem;color:var(--text-sub);line-height:1.8;margin-bottom:16px}
+
+/* FEATURES GRID */
 .features{background:var(--bg)}
 .features-inner{max-width:1100px;margin:0 auto}
 .features-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
@@ -69,6 +81,8 @@ h2.section-title span{color:var(--red)}
 .feat-card-body{padding:24px 24px 28px;flex:1}
 .feat-card h3{font-family:'Poppins','Poppins Fallback',sans-serif;font-size:1rem;font-weight:600;color:var(--text);margin-bottom:8px}
 .feat-card p{font-size:.86rem;color:var(--text-sub);line-height:1.7}
+
+/* APPLICATIONS */
 .applications{background:var(--surface)}
 .applications-inner{max-width:1100px;margin:0 auto}
 .app-list{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:40px}
@@ -76,11 +90,15 @@ h2.section-title span{color:var(--red)}
 .app-item svg{width:20px;height:20px;color:var(--red);flex-shrink:0;margin-top:2px}
 .app-item h4{font-family:'Poppins','Poppins Fallback',sans-serif;font-size:.95rem;font-weight:600;color:var(--text);margin-bottom:4px}
 .app-item p{font-size:.83rem;color:var(--text-sub);line-height:1.6}
+
+/* CTA BAND */
 .cta-band{background:var(--red);padding:64px clamp(20px,5vw,80px);text-align:center}
 .cta-band h2{font-family:'Poppins','Poppins Fallback',sans-serif;font-size:clamp(1.6rem,3vw,2.4rem);font-weight:600;color:#fff;margin-bottom:12px}
 .cta-band p{color:rgba(255,255,255,0.85);margin-bottom:32px;font-size:1rem}
 .cta-band .btn-white{display:inline-flex;align-items:center;gap:10px;background:#fff;color:var(--red);font-weight:700;font-size:.9rem;letter-spacing:.06em;text-transform:uppercase;padding:15px 32px;clip-path:polygon(8px 0%,100% 0%,calc(100% - 8px) 100%,0% 100%);transition:transform .15s}
 .cta-band .btn-white:hover{transform:translateY(-2px)}
+
+/* FOOTER */
 .footer-main{background:#111114;padding:72px clamp(20px,5vw,80px) 48px}
 .footer-grid{display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:48px;max-width:1200px}
 .footer-brand img{height:72px;width:auto;object-fit:contain;mix-blend-mode:screen;margin-bottom:20px}
@@ -105,10 +123,22 @@ h2.section-title span{color:var(--red)}
 .footer-bottom-links{display:flex;gap:20px;list-style:none}
 .footer-bottom-links a{font-size:.75rem;color:#555;transition:color .2s}
 .footer-bottom-links a:hover{color:var(--red)}
+
+/* REVEAL */
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
 .reveal.visible{opacity:1;transform:none}
-@media(max-width:900px){.overview-inner{grid-template-columns:1fr}.features-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:1fr 1fr}.nav-links{display:none}}
-@media(max-width:600px){.features-grid,.app-list{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr}.hero h1{font-size:2.2rem}}
+
+@media(max-width:900px){
+  .overview-inner{grid-template-columns:1fr}
+  .features-grid{grid-template-columns:1fr 1fr}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .nav-links{display:none}
+}
+@media(max-width:600px){
+  .features-grid,.app-list{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+  .hero h1{font-size:2.2rem}
+}
 </style>
 </head>
 <body>
@@ -119,7 +149,9 @@ h2.section-title span{color:var(--red)}
 </a>
 
 <nav role="navigation">
-  <a href="index.html" class="nav-logo"><img src="Logo.png" alt="Karthick Design"></a>
+  <a href="index.html" class="nav-logo">
+    <img src="Logo.png" alt="Karthick Design">
+  </a>
   <ul class="nav-links">
     <li><a href="index.html">Home</a></li>
     <li><a href="index.html#about">About</a></li>
@@ -140,15 +172,18 @@ h2.section-title span{color:var(--red)}
   <a href="index.html#contact" class="nav-cta">Get Quote</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero" role="banner">
   <div class="hero-inner">
     <div class="hero-breadcrumb reveal">
-      <a href="index.html">Home</a><span>›</span>
-      <a href="index.html#services">Services</a><span>›</span>
-      Gates &amp; Railings
+      <a href="index.html">Home</a>
+      <span>›</span>
+      <a href="index.html#services">Services</a>
+      <span>›</span>
+      Engineering Services
     </div>
-    <h1 class="reveal">Custom <span class="accent">Gates &amp; Railings</span><br>in Chennai</h1>
-    <p class="hero-sub reveal">Custom-designed MS gates, compound railings, staircase handrails, and balcony guards. Functional beauty crafted in every form.</p>
+    <h1 class="reveal">Professional <span class="accent">Engineering</span><br>Services in Chennai</h1>
+    <p class="hero-sub reveal">Structural design, site surveys, detailed drawings, and end-to-end project management — bringing your MS fabrication projects to life with precision and expertise.</p>
     <div class="hero-actions reveal">
       <a href="tel:+918608720195" class="btn-primary">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.68A2 2 0 012 .01h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92v2z"/></svg>
@@ -159,88 +194,93 @@ h2.section-title span{color:var(--red)}
   </div>
 </section>
 
+<!-- OVERVIEW -->
 <section class="overview">
   <div class="overview-inner">
     <div class="reveal">
-      <div class="section-label">What We Build</div>
-      <h2 class="section-title">MS Gates &amp; Railings Built to <span>Last a Lifetime</span></h2>
-      <p>Karthick Design crafts strong, elegant MS gates and railings tailored to your home or commercial space. From simple compound gates to ornamental staircase railings, every piece is fabricated with precision welding and finished to your specification.</p>
-      <p>We handle everything — design consultation, fabrication, surface treatment, and on-site installation. All materials are sourced from certified MS suppliers ensuring consistent quality and structural integrity.</p>
-      <p style="margin-top:24px"><a href="index.html#contact" class="btn-primary">Request a Quote →</a></p>
+      <div class="section-label">What We Do</div>
+      <h2 class="section-title">Complete <span>Engineering Support</span> for Every Project</h2>
+      <p>At Karthick Design, our engineering services go beyond fabrication. We provide expert structural design consultation, precise site surveys, and detailed technical drawings to ensure every project is planned, executed, and delivered to the highest standard.</p>
+      <p>Whether it is a small residential gate installation or a large industrial shed structure, our experienced team handles the full engineering lifecycle — from initial concept and measurement to final installation supervision and sign-off.</p>
+      <p style="margin-top:24px"><a href="index.html#contact" class="btn-primary">Request a Consultation →</a></p>
     </div>
-    <img class="overview-img reveal" src="Gates & Railings.jpg" alt="Custom MS gates and railings">
+    <img class="overview-img reveal" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80" alt="Engineering consultation and project planning" loading="lazy">
   </div>
 </section>
 
+<!-- FEATURES -->
 <section class="features">
   <div class="features-inner">
-    <div class="section-label reveal">Our Range</div>
-    <h2 class="section-title reveal">Types of <span>Gates &amp; Railings</span> We Make</h2>
+    <div class="section-label reveal">Our Capabilities</div>
+    <h2 class="section-title reveal">Engineering <span>Services We Offer</span></h2>
     <div class="features-grid">
       <div class="feat-card reveal">
-        <img class="feat-card-img" src="Gates & Railings.jpg" alt="MS compound gates" loading="lazy">
+        <img class="feat-card-img" src="https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=600&q=75" alt="Structural design and blueprints" loading="lazy">
         <div class="feat-card-body">
-          <h3>Compound Gates</h3>
-          <p>Single and double-leaf MS compound gates for residential and commercial properties. Custom sizes, designs, and powder-coat finishes available.</p>
+          <h3>Structural Design</h3>
+          <p>Expert structural design and consultation for MS gates, sheds, railings, and custom fabrication works. We produce detailed engineering drawings that meet local building codes and site requirements.</p>
         </div>
       </div>
       <div class="feat-card reveal">
-        <img class="feat-card-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=75" alt="Staircase railings" loading="lazy">
+        <img class="feat-card-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=75" alt="Site survey and measurement" loading="lazy">
         <div class="feat-card-body">
-          <h3>Staircase Railings</h3>
-          <p>Interior and exterior staircase handrails in MS or stainless steel. Designed for safety and elegance — straight, curved, or spiral staircases.</p>
+          <h3>Site Survey & Measurement</h3>
+          <p>Thorough on-site surveys and precise measurements to ensure every fabricated component fits perfectly. We assess ground conditions, load requirements, and installation constraints before production begins.</p>
         </div>
       </div>
       <div class="feat-card reveal">
-        <img class="feat-card-img" src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=600&q=75" alt="Balcony guard railings" loading="lazy">
+        <img class="feat-card-img" src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&q=75" alt="Project management and installation" loading="lazy">
         <div class="feat-card-body">
-          <h3>Balcony Guards</h3>
-          <p>Safety railings for balconies, terraces, and rooftops. Strong MS frames with various infill options — flat bars, square pipes, or decorative inserts.</p>
+          <h3>Project Management</h3>
+          <p>End-to-end project management from quotation to handover. We coordinate fabrication schedules, material procurement, quality checks, and on-site installation to deliver on time and within budget.</p>
         </div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- APPLICATIONS -->
 <section class="applications">
   <div class="applications-inner">
-    <div class="section-label reveal">Where We Install</div>
-    <h2 class="section-title reveal">Applications &amp; <span>Use Cases</span></h2>
+    <div class="section-label reveal">Where We Apply It</div>
+    <h2 class="section-title reveal">Engineering <span>Applications</span></h2>
     <div class="app-list">
       <div class="app-item reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        <div><h4>Residential Homes</h4><p>Main entrance gates, boundary compound walls, staircase handrails, and balcony safety railings for homes and villas.</p></div>
+        <div><h4>Industrial Shed Design</h4><p>Structural drawings and engineering calculations for pre-engineered sheds, factory roofing, and large-span roof structures.</p></div>
       </div>
       <div class="app-item reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        <div><h4>Apartments &amp; Flats</h4><p>Common area railings, stairwell handrails, terrace guards, and parking area gates for apartment complexes.</p></div>
+        <div><h4>Gate & Railing Layout</h4><p>Site-specific design and measurement for compound gates, staircase railings, balcony guards, and access control structures.</p></div>
       </div>
       <div class="app-item reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        <div><h4>Commercial Buildings</h4><p>Office entrance gates, lobby railings, mezzanine guards, and sliding gates for shops and showrooms.</p></div>
+        <div><h4>Mezzanine Floor Planning</h4><p>Load analysis, column placement, and structural drawings for mezzanine floors, storage platforms, and elevated walkways.</p></div>
       </div>
       <div class="app-item reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        <div><h4>Industrial Facilities</h4><p>Security gates, machine guards, walkway railings, and safety barriers for factories and warehouses.</p></div>
+        <div><h4>Parking Canopy Engineering</h4><p>Engineering design for MS parking canopies, carports, and shade structures with wind and rain load calculations.</p></div>
       </div>
       <div class="app-item reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        <div><h4>Schools &amp; Institutions</h4><p>Campus boundary gates, corridor railings, and safety fencing for schools, colleges, and institutions.</p></div>
+        <div><h4>Renovation & Retrofitting</h4><p>Assessment and engineering plans for upgrading, reinforcing, or modifying existing MS structures to meet new requirements.</p></div>
       </div>
       <div class="app-item reveal">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-        <div><h4>Sliding &amp; Folding Gates</h4><p>Motorised and manual sliding gates, folding gates, and retractable barriers for driveways and parking areas.</p></div>
+        <div><h4>Maintenance Contracts</h4><p>Scheduled inspection, lubrication, coating, and repair services to extend the life of fabricated MS structures and prevent failures.</p></div>
       </div>
     </div>
   </div>
 </section>
 
+<!-- CTA -->
 <div class="cta-band">
-  <h2 class="reveal">Looking for Custom Gates or Railings?</h2>
-  <p class="reveal">Get a free site visit and quotation. We serve all areas across Chennai and Tamil Nadu.</p>
+  <h2 class="reveal">Need Engineering Support in Chennai?</h2>
+  <p class="reveal">Call us or send a WhatsApp message — we respond within 2 hours during business hours.</p>
   <a href="tel:+918608720195" class="btn-white reveal">Call 8608720195 Now</a>
 </div>
 
+<!-- FOOTER -->
 <div class="footer-main">
   <div class="footer-grid">
     <div class="footer-brand">
@@ -284,7 +324,9 @@ h2.section-title span{color:var(--red)}
 </div>
 <div class="footer-bottom">
   <span class="footer-copy">© 2025 Karthick Design – MS Fabrication Work. All rights reserved.</span>
-  <ul class="footer-bottom-links"><li><a href="index.html#contact">Contact</a></li></ul>
+  <ul class="footer-bottom-links">
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
 </div>
 
 <script>
